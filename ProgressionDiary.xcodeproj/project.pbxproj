@@ -19,6 +19,7 @@
 		6D7CD4C727DF78A100012150 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D7CD4C627DF78A100012150 /* GoogleService-Info.plist */; };
 		6D7CD4CA27DF7A2200012150 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6D7CD4C927DF7A2200012150 /* FirebaseAuth */; };
 		6D7CD4CC27DF7A2200012150 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6D7CD4CB27DF7A2200012150 /* FirebaseFirestore */; };
+		6D7CD4D027DF7EA400012150 /* SwiftyMocky in Frameworks */ = {isa = PBXBuildFile; productRef = 6D7CD4CF27DF7EA400012150 /* SwiftyMocky */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D7CD4D027DF7EA400012150 /* SwiftyMocky in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				6D7CD4AD27DF769800012150 /* ProgressionDiaryTests.swift */,
+				6D7CD4D127DF7F4A00012150 /* Generated */,
 			);
 			path = ProgressionDiaryTests;
 			sourceTree = "<group>";
@@ -138,6 +141,13 @@
 				6D7CD4B927DF769800012150 /* ProgressionDiaryUITestsLaunchTests.swift */,
 			);
 			path = ProgressionDiaryUITests;
+			sourceTree = "<group>";
+		};
+		6D7CD4D127DF7F4A00012150 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +188,9 @@
 				6D7CD4AB27DF769800012150 /* PBXTargetDependency */,
 			);
 			name = ProgressionDiaryTests;
+			packageProductDependencies = (
+				6D7CD4CF27DF7EA400012150 /* SwiftyMocky */,
+			);
 			productName = ProgressionDiaryTests;
 			productReference = 6D7CD4A927DF769800012150 /* ProgressionDiaryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -235,6 +248,7 @@
 			packageReferences = (
 				6D7CD4C827DF7A2200012150 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				6D7CD4CD27DF7DBF00012150 /* XCRemoteSwiftPackageReference "Resolver" */,
+				6D7CD4CE27DF7EA400012150 /* XCRemoteSwiftPackageReference "SwiftyMocky" */,
 			);
 			productRefGroup = 6D7CD49527DF769500012150 /* Products */;
 			projectDirPath = "";
@@ -627,6 +641,14 @@
 				kind = branch;
 			};
 		};
+		6D7CD4CE27DF7EA400012150 /* XCRemoteSwiftPackageReference "SwiftyMocky" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MakeAWishFoundation/SwiftyMocky";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -639,6 +661,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6D7CD4C827DF7A2200012150 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		6D7CD4CF27DF7EA400012150 /* SwiftyMocky */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6D7CD4CE27DF7EA400012150 /* XCRemoteSwiftPackageReference "SwiftyMocky" */;
+			productName = SwiftyMocky;
 		};
 /* End XCSwiftPackageProductDependency section */
 
