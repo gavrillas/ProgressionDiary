@@ -1,0 +1,15 @@
+sourceryCommand: null
+sourceryTemplate: null
+ProgressionDiary UnitTests:
+  sources:
+    include:
+    - ./ProgressionDiary
+  output: ./ProgressionDiary Tests/Generated/Mock.generated.swift
+  targets:
+  - ProgressionDiary
+  testable:
+  - ProgressionDiary
+  import:
+  - Combine
+  - Foundation
+  - SwiftUI

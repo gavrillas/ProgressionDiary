@@ -19,6 +19,10 @@
 		6D7CD4C727DF78A100012150 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D7CD4C627DF78A100012150 /* GoogleService-Info.plist */; };
 		6D7CD4CA27DF7A2200012150 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6D7CD4C927DF7A2200012150 /* FirebaseAuth */; };
 		6D7CD4CC27DF7A2200012150 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6D7CD4CB27DF7A2200012150 /* FirebaseFirestore */; };
+		6D7CD4D027DF7EA400012150 /* SwiftyMocky in Frameworks */ = {isa = PBXBuildFile; productRef = 6D7CD4CF27DF7EA400012150 /* SwiftyMocky */; };
+		6D7CD4D727DF82C600012150 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D7CD4D527DF82C600012150 /* Localizable.strings */; };
+		6D7CD4DB27DF860B00012150 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4D927DF860A00012150 /* Assets.swift */; };
+		6D7CD4DC27DF860B00012150 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4DA27DF860A00012150 /* Localizable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,9 @@
 		6D7CD4B727DF769800012150 /* ProgressionDiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionDiaryUITests.swift; sourceTree = "<group>"; };
 		6D7CD4B927DF769800012150 /* ProgressionDiaryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionDiaryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6D7CD4C627DF78A100012150 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6D7CD4D627DF82C600012150 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		6D7CD4D927DF860A00012150 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Assets.swift; path = ProgressionDiary/Resources/Generated/Assets.swift; sourceTree = SOURCE_ROOT; };
+		6D7CD4DA27DF860A00012150 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Localizable.swift; path = ProgressionDiary/Resources/Generated/Localizable.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D7CD4D027DF7EA400012150 /* SwiftyMocky in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,9 +112,9 @@
 		6D7CD49627DF769500012150 /* ProgressionDiary */ = {
 			isa = PBXGroup;
 			children = (
+				6D7CD4D227DF822C00012150 /* Resources */,
 				6D7CD49727DF769500012150 /* ProgressionDiaryApp.swift */,
 				6D7CD49927DF769500012150 /* ContentView.swift */,
-				6D7CD49B27DF769700012150 /* Assets.xcassets */,
 				6D7CD4A027DF769700012150 /* Persistence.swift */,
 				6D7CD4A227DF769700012150 /* ProgressionDiary.xcdatamodeld */,
 				6D7CD4C627DF78A100012150 /* GoogleService-Info.plist */,
@@ -127,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				6D7CD4AD27DF769800012150 /* ProgressionDiaryTests.swift */,
+				6D7CD4D127DF7F4A00012150 /* Generated */,
 			);
 			path = ProgressionDiaryTests;
 			sourceTree = "<group>";
@@ -140,6 +149,48 @@
 			path = ProgressionDiaryUITests;
 			sourceTree = "<group>";
 		};
+		6D7CD4D127DF7F4A00012150 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		6D7CD4D227DF822C00012150 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6D7CD4D827DF85B800012150 /* Generated */,
+				6D7CD4D327DF829200012150 /* Localization */,
+				6D7CD49B27DF769700012150 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6D7CD4D327DF829200012150 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				6D7CD4D427DF82AB00012150 /* en.lproj */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		6D7CD4D427DF82AB00012150 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				6D7CD4D527DF82C600012150 /* Localizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		6D7CD4D827DF85B800012150 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				6D7CD4D927DF860A00012150 /* Assets.swift */,
+				6D7CD4DA27DF860A00012150 /* Localizable.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,6 +201,7 @@
 				6D7CD49027DF769500012150 /* Sources */,
 				6D7CD49127DF769500012150 /* Frameworks */,
 				6D7CD49227DF769500012150 /* Resources */,
+				6D7CD4DD27DF863F00012150 /* Run SwiftGent */,
 			);
 			buildRules = (
 			);
@@ -178,6 +230,9 @@
 				6D7CD4AB27DF769800012150 /* PBXTargetDependency */,
 			);
 			name = ProgressionDiaryTests;
+			packageProductDependencies = (
+				6D7CD4CF27DF7EA400012150 /* SwiftyMocky */,
+			);
 			productName = ProgressionDiaryTests;
 			productReference = 6D7CD4A927DF769800012150 /* ProgressionDiaryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -234,6 +289,8 @@
 			mainGroup = 6D7CD48B27DF769500012150;
 			packageReferences = (
 				6D7CD4C827DF7A2200012150 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				6D7CD4CD27DF7DBF00012150 /* XCRemoteSwiftPackageReference "Resolver" */,
+				6D7CD4CE27DF7EA400012150 /* XCRemoteSwiftPackageReference "SwiftyMocky" */,
 			);
 			productRefGroup = 6D7CD49527DF769500012150 /* Products */;
 			projectDirPath = "";
@@ -252,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D7CD49F27DF769700012150 /* Preview Assets.xcassets in Resources */,
+				6D7CD4D727DF82C600012150 /* Localizable.strings in Resources */,
 				6D7CD49C27DF769700012150 /* Assets.xcassets in Resources */,
 				6D7CD4C727DF78A100012150 /* GoogleService-Info.plist in Resources */,
 			);
@@ -273,6 +331,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6D7CD4DD27DF863F00012150 /* Run SwiftGent */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftGent";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nmint run swiftgen\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6D7CD49027DF769500012150 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -281,6 +360,8 @@
 				6D7CD4A127DF769700012150 /* Persistence.swift in Sources */,
 				6D7CD4A427DF769700012150 /* ProgressionDiary.xcdatamodeld in Sources */,
 				6D7CD49A27DF769500012150 /* ContentView.swift in Sources */,
+				6D7CD4DB27DF860B00012150 /* Assets.swift in Sources */,
+				6D7CD4DC27DF860B00012150 /* Localizable.swift in Sources */,
 				6D7CD49827DF769500012150 /* ProgressionDiaryApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +397,17 @@
 			targetProxy = 6D7CD4B427DF769800012150 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6D7CD4D527DF82C600012150 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D7CD4D627DF82C600012150 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6D7CD4BB27DF769800012150 /* Debug */ = {
@@ -618,6 +710,22 @@
 				kind = branch;
 			};
 		};
+		6D7CD4CD27DF7DBF00012150 /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		6D7CD4CE27DF7EA400012150 /* XCRemoteSwiftPackageReference "SwiftyMocky" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MakeAWishFoundation/SwiftyMocky";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -630,6 +738,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6D7CD4C827DF7A2200012150 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		6D7CD4CF27DF7EA400012150 /* SwiftyMocky */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6D7CD4CE27DF7EA400012150 /* XCRemoteSwiftPackageReference "SwiftyMocky" */;
+			productName = SwiftyMocky;
 		};
 /* End XCSwiftPackageProductDependency section */
 

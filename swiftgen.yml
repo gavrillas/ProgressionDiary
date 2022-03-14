@@ -1,0 +1,16 @@
+strings:
+  inputs:
+    - ProgressionDiary/Resources/Localization/en.lproj/Localizable.strings
+
+  outputs:
+    params:
+      enumName: Txt
+    templateName: structured-swift4
+    output: ProgressionDiary/Resources/Generated/Localizable.swift
+
+xcassets:
+  inputs:
+    - ProgressionDiary/Resources/
+  outputs:
+    templateName: swift4
+    output: ProgressionDiary/Resources/Generated/Assets.swift
