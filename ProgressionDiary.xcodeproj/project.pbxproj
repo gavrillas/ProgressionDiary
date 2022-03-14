@@ -16,6 +16,9 @@
 		6D7CD4AE27DF769800012150 /* ProgressionDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4AD27DF769800012150 /* ProgressionDiaryTests.swift */; };
 		6D7CD4B827DF769800012150 /* ProgressionDiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4B727DF769800012150 /* ProgressionDiaryUITests.swift */; };
 		6D7CD4BA27DF769800012150 /* ProgressionDiaryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4B927DF769800012150 /* ProgressionDiaryUITestsLaunchTests.swift */; };
+		6D7CD4C727DF78A100012150 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D7CD4C627DF78A100012150 /* GoogleService-Info.plist */; };
+		6D7CD4CA27DF7A2200012150 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6D7CD4C927DF7A2200012150 /* FirebaseAuth */; };
+		6D7CD4CC27DF7A2200012150 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6D7CD4CB27DF7A2200012150 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,7 @@
 		6D7CD4B327DF769800012150 /* ProgressionDiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressionDiaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D7CD4B727DF769800012150 /* ProgressionDiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionDiaryUITests.swift; sourceTree = "<group>"; };
 		6D7CD4B927DF769800012150 /* ProgressionDiaryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionDiaryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6D7CD4C627DF78A100012150 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D7CD4CA27DF7A2200012150 /* FirebaseAuth in Frameworks */,
+				6D7CD4CC27DF7A2200012150 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +109,7 @@
 				6D7CD49B27DF769700012150 /* Assets.xcassets */,
 				6D7CD4A027DF769700012150 /* Persistence.swift */,
 				6D7CD4A227DF769700012150 /* ProgressionDiary.xcdatamodeld */,
+				6D7CD4C627DF78A100012150 /* GoogleService-Info.plist */,
 				6D7CD49D27DF769700012150 /* Preview Content */,
 			);
 			path = ProgressionDiary;
@@ -149,6 +156,10 @@
 			dependencies = (
 			);
 			name = ProgressionDiary;
+			packageProductDependencies = (
+				6D7CD4C927DF7A2200012150 /* FirebaseAuth */,
+				6D7CD4CB27DF7A2200012150 /* FirebaseFirestore */,
+			);
 			productName = ProgressionDiary;
 			productReference = 6D7CD49427DF769500012150 /* ProgressionDiary.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +232,9 @@
 				Base,
 			);
 			mainGroup = 6D7CD48B27DF769500012150;
+			packageReferences = (
+				6D7CD4C827DF7A2200012150 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 6D7CD49527DF769500012150 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -239,6 +253,7 @@
 			files = (
 				6D7CD49F27DF769700012150 /* Preview Assets.xcassets in Resources */,
 				6D7CD49C27DF769700012150 /* Assets.xcassets in Resources */,
+				6D7CD4C727DF78A100012150 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,6 +608,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6D7CD4C827DF7A2200012150 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6D7CD4C927DF7A2200012150 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6D7CD4C827DF7A2200012150 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		6D7CD4CB27DF7A2200012150 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6D7CD4C827DF7A2200012150 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		6D7CD4A227DF769700012150 /* ProgressionDiary.xcdatamodeld */ = {

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>107108506118-e87ot73gq6mm15uaq4to3u6oomkud90m.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.107108506118-e87ot73gq6mm15uaq4to3u6oomkud90m</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBwpfOYJC62i-ekHryt1Ujh0t2wpK8QBGk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>107108506118</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>GK.ProgressionDiary</string>
+	<key>PROJECT_ID</key>
+	<string>progressiondiary-395e9</string>
+	<key>STORAGE_BUCKET</key>
+	<string>progressiondiary-395e9.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:107108506118:ios:46da8708cc22cb9c360187</string>
+</dict>
+</plist>
