@@ -23,6 +23,8 @@
 		6D7CD4D727DF82C600012150 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D7CD4D527DF82C600012150 /* Localizable.strings */; };
 		6D7CD4DB27DF860B00012150 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4D927DF860A00012150 /* Assets.swift */; };
 		6D7CD4DC27DF860B00012150 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4DA27DF860A00012150 /* Localizable.swift */; };
+		6D7CD4E027DF890800012150 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4DF27DF890800012150 /* AuthService.swift */; };
+		6D7CD4E327DF8D8A00012150 /* Error+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4E227DF8D8A00012150 /* Error+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		6D7CD4D627DF82C600012150 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		6D7CD4D927DF860A00012150 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Assets.swift; path = ProgressionDiary/Resources/Generated/Assets.swift; sourceTree = SOURCE_ROOT; };
 		6D7CD4DA27DF860A00012150 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Localizable.swift; path = ProgressionDiary/Resources/Generated/Localizable.swift; sourceTree = SOURCE_ROOT; };
+		6D7CD4DF27DF890800012150 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		6D7CD4E227DF8D8A00012150 /* Error+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 		6D7CD49627DF769500012150 /* ProgressionDiary */ = {
 			isa = PBXGroup;
 			children = (
+				6D7CD4E127DF8D7300012150 /* Extensions */,
+				6D7CD4DE27DF88F500012150 /* Services */,
 				6D7CD4D227DF822C00012150 /* Resources */,
 				6D7CD49727DF769500012150 /* ProgressionDiaryApp.swift */,
 				6D7CD49927DF769500012150 /* ContentView.swift */,
@@ -189,6 +195,22 @@
 				6D7CD4DA27DF860A00012150 /* Localizable.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		6D7CD4DE27DF88F500012150 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6D7CD4DF27DF890800012150 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6D7CD4E127DF8D7300012150 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6D7CD4E227DF8D8A00012150 /* Error+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +385,8 @@
 				6D7CD4DB27DF860B00012150 /* Assets.swift in Sources */,
 				6D7CD4DC27DF860B00012150 /* Localizable.swift in Sources */,
 				6D7CD49827DF769500012150 /* ProgressionDiaryApp.swift in Sources */,
+				6D7CD4E327DF8D8A00012150 /* Error+Extensions.swift in Sources */,
+				6D7CD4E027DF890800012150 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
