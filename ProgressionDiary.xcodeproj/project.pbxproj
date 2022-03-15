@@ -30,6 +30,11 @@
 		6D7CD4F427E0B61800012150 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4F327E0B61800012150 /* AppViewModel.swift */; };
 		6D7CD4FD27E0BEEB00012150 /* AppViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4FC27E0BEEB00012150 /* AppViewModelTest.swift */; };
 		6D7CD4FE27E0C00100012150 /* Mock.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4F827E0B94D00012150 /* Mock.generated.swift */; };
+		6D7CD50227E0ED9400012150 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD50127E0ED9400012150 /* AppView.swift */; };
+		6D7CD50527E0EEE300012150 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD50427E0EEE300012150 /* DI.swift */; };
+		6D7CD50727E0EF1700012150 /* DI+Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD50627E0EF1700012150 /* DI+Navigator.swift */; };
+		6D7CD50927E0EF9700012150 /* DI+Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD50827E0EF9700012150 /* DI+Services.swift */; };
+		6D7CD50B27E0F02800012150 /* DI+ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD50A27E0F02800012150 /* DI+ViewModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +77,11 @@
 		6D7CD4F327E0B61800012150 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		6D7CD4F827E0B94D00012150 /* Mock.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mock.generated.swift; sourceTree = "<group>"; };
 		6D7CD4FC27E0BEEB00012150 /* AppViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModelTest.swift; sourceTree = "<group>"; };
+		6D7CD50127E0ED9400012150 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		6D7CD50427E0EEE300012150 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
+		6D7CD50627E0EF1700012150 /* DI+Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DI+Navigator.swift"; sourceTree = "<group>"; };
+		6D7CD50827E0EF9700012150 /* DI+Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DI+Services.swift"; sourceTree = "<group>"; };
+		6D7CD50A27E0F02800012150 /* DI+ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DI+ViewModels.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +136,7 @@
 		6D7CD49627DF769500012150 /* ProgressionDiary */ = {
 			isa = PBXGroup;
 			children = (
+				6D7CD50327E0EE8C00012150 /* DI */,
 				6D7CD4F227E0B5E500012150 /* App */,
 				6D7CD4ED27DFC6DD00012150 /* Common */,
 				6D7CD4E127DF8D7300012150 /* Extensions */,
@@ -255,8 +266,20 @@
 				6D7CD49727DF769500012150 /* ProgressionDiaryApp.swift */,
 				6D7CD4F327E0B61800012150 /* AppViewModel.swift */,
 				6D7CD4E827DFC62C00012150 /* AppNavigator.swift */,
+				6D7CD50127E0ED9400012150 /* AppView.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		6D7CD50327E0EE8C00012150 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				6D7CD50427E0EEE300012150 /* DI.swift */,
+				6D7CD50627E0EF1700012150 /* DI+Navigator.swift */,
+				6D7CD50827E0EF9700012150 /* DI+Services.swift */,
+				6D7CD50A27E0F02800012150 /* DI+ViewModels.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,12 +452,17 @@
 			files = (
 				6D7CD4A127DF769700012150 /* Persistence.swift in Sources */,
 				6D7CD4A427DF769700012150 /* ProgressionDiary.xcdatamodeld in Sources */,
+				6D7CD50927E0EF9700012150 /* DI+Services.swift in Sources */,
 				6D7CD4F427E0B61800012150 /* AppViewModel.swift in Sources */,
+				6D7CD50527E0EEE300012150 /* DI.swift in Sources */,
+				6D7CD50B27E0F02800012150 /* DI+ViewModels.swift in Sources */,
+				6D7CD50727E0EF1700012150 /* DI+Navigator.swift in Sources */,
 				6D7CD49A27DF769500012150 /* ContentView.swift in Sources */,
 				6D7CD4E927DFC62C00012150 /* AppNavigator.swift in Sources */,
 				6D7CD4DB27DF860B00012150 /* Assets.swift in Sources */,
 				6D7CD4EF27DFC6F400012150 /* Navigator.swift in Sources */,
 				6D7CD4DC27DF860B00012150 /* Localizable.swift in Sources */,
+				6D7CD50227E0ED9400012150 /* AppView.swift in Sources */,
 				6D7CD49827DF769500012150 /* ProgressionDiaryApp.swift in Sources */,
 				6D7CD4E327DF8D8A00012150 /* Error+Extensions.swift in Sources */,
 				6D7CD4E027DF890800012150 /* AuthService.swift in Sources */,

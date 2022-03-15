@@ -7,18 +7,17 @@
 
 import SwiftUI
 import Firebase
+import Resolver
 
 @main
 struct ProgressionDiaryApp: App {
-    @StateObject var appNavigator = AppNavigator()
-
     init() {
         FirebaseApp.configure()
     }
 
     var body: some Scene {
         WindowGroup {
-            appNavigator.destination
+            AppView<AppViewModel, AppNavigator>(viewModel: Resolver.resolve())
         }
     }
 }
