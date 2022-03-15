@@ -10,6 +10,7 @@ import Firebase
 
 @main
 struct ProgressionDiaryApp: App {
+    @StateObject var appNavigator = AppNavigator()
 
     init() {
         FirebaseApp.configure()
@@ -17,7 +18,7 @@ struct ProgressionDiaryApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            appNavigator.destination
         }
     }
 }
