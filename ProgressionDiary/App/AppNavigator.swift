@@ -2,9 +2,9 @@ import SwiftUI
 import Combine
 import Resolver
 
-//sourcery: AutoMockable
-//sourcery: typealias = "DestinationType = AppNavigator.NavigationState"
-//sourcery: typealias = "Destination = EmptyView"
+// sourcery: AutoMockable
+// sourcery: typealias = "DestinationType = AppNavigator.NavigationState"
+// sourcery: typealias = "Destination = EmptyView"
 protocol AppNavigatorUseCase: Navigator {
     func showAuthentication()
     func showDashboard()

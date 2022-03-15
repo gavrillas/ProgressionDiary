@@ -12,7 +12,7 @@ enum UserState {
     case loggedOut
 }
 
-//sourcery: AutoMockable
+// sourcery: AutoMockable
 protocol AuthServiceUseCase {
     var currentUserState: UserState { get }
     var userStateChangePublisher: AnyPublisher<UserState, Never> { get }

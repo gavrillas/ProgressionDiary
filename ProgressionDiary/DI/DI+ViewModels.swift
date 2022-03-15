@@ -7,7 +7,7 @@ extension Resolver {
         }
 
         Resolver.register { (_, args) in
-            AuthenticationViewModel(with: args.get())
+            AuthenticationViewModel(with: args.get(), authService: resolve())
         }
     }
 }

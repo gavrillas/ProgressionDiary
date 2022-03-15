@@ -17,6 +17,7 @@ class AuthenticationViewState: ObservableObject {
     
     @Published var email: String = ""
     @Published var password: String = ""
+    @Published var isLoaing: Bool = false
     @Published var selectedSegment: SegmentState = .login
 
     let emailTitle = Txt.Authentication.email
@@ -46,14 +47,23 @@ struct AuthenticationView<ViewModel: AuthenticationViewModelUseCase>: View {
                 .padding()
             TextField(state.paswordTitle, text: $state.password)
                 .padding()
+            Button(state.selectedSegment.title) {
+
+            }.padding()
             Spacer()
+        }.allowsHitTesting(!state.isLoaing)
+        .overlay() {
+            if state.isLoaing {
+                ProgressView()
+                    .progressViewStyle(.circular)
+            }
         }
     }
 }
 
 struct AuthenticationView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = AuthenticationViewModel(with: AuthenticationViewState())
+        let viewModel = AuthenticationViewModel(with: AuthenticationViewState(), authService: AuthService())
         AuthenticationView(viewModel: viewModel)
     }
 }
