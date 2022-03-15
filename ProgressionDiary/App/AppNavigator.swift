@@ -28,11 +28,8 @@ class AppNavigator: AppNavigatorUseCase {
     var destination: some View {
         switch state {
         case .auth:
-            // After the `navigate(to state:, model:)` is called
-            // `inject()` will return the model which represents the sate of the view.
-            // let viewState: ExampleState = inject() ?? .init()
-            // ExampleView<ExampleViewModel, ExampleNavigator>(with: Resolver.resolve(args: viewState))
-            EmptyView()
+            let viewState: AuthenticationViewState = inject() ?? .init()
+            AuthenticationView<AuthenticationViewModel>(viewModel: Resolver.resolve(args: viewState))
         case .dashboard:
             EmptyView()
         case .none:

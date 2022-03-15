@@ -5,5 +5,9 @@ extension Resolver {
         Resolver.register {
             AppViewModel<AppNavigator>(with: resolve(), authService: resolve())
         }
+
+        Resolver.register { (_, args) in
+            AuthenticationViewModel(with: args.get())
+        }
     }
 }
