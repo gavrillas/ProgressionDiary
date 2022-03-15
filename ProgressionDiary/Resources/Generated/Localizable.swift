@@ -14,10 +14,12 @@ internal enum Txt {
   internal enum Authentication {
     /// Email cím:
     internal static let email = Txt.tr("Localizable", "authentication.email")
+    /// Bejelentkezés
+    internal static let login = Txt.tr("Localizable", "authentication.login")
     /// Jelszó
     internal static let password = Txt.tr("Localizable", "authentication.password")
-    /// Bejelentkezés
-    internal static let title = Txt.tr("Localizable", "authentication.title")
+    /// Regisztráció
+    internal static let register = Txt.tr("Localizable", "authentication.register")
   }
 
   internal enum General {

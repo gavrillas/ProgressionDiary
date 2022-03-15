@@ -38,7 +38,8 @@ class AppNavigator: AppNavigatorUseCase {
     }
 
     func showAuthentication() {
-        
+        let viewState = AuthenticationViewState()
+        navigate(to: .auth, model: viewState)
     }
 
     func showDashboard() {

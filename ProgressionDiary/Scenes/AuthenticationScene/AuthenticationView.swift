@@ -1,11 +1,27 @@
 import SwiftUI
 
 class AuthenticationViewState: ObservableObject {
-    let title = Txt.Authentication.title
-    let emailTitle = Txt.Authentication.email
-    let paswordTitle = Txt.Authentication.password
+    enum SegmentState {
+        case login
+        case register
+
+        var title: String {
+            switch self {
+            case .login:
+                return Txt.Authentication.login
+            case .register:
+                return Txt.Authentication.register
+            }
+        }
+    }
+    
     @Published var email: String = ""
     @Published var password: String = ""
+    @Published var selectedSegment: SegmentState = .login
+
+    let emailTitle = Txt.Authentication.email
+    let paswordTitle = Txt.Authentication.password
+    let segmentedOptions: [SegmentState] = [.login, .register]
 }
 
 struct AuthenticationView<ViewModel: AuthenticationViewModelUseCase>: View {
@@ -18,12 +34,18 @@ struct AuthenticationView<ViewModel: AuthenticationViewModelUseCase>: View {
     }
 
     var body: some View {
-        HStack {
-            Text(state.title)
+        VStack {
             Spacer()
+            Picker(state.selectedSegment.title, selection: $state.selectedSegment) {
+                ForEach(state.segmentedOptions, id: \.self) {
+                    Text($0.title).tag($0)
+                }
+            }.pickerStyle(.segmented)
+                .padding()
             TextField(state.emailTitle, text: $state.email)
-            Spacer()
+                .padding()
             TextField(state.paswordTitle, text: $state.password)
+                .padding()
             Spacer()
         }
     }
