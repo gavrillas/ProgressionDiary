@@ -18,12 +18,21 @@ class AppNavigatorTest: XCTestCase {
         super.tearDown()
     }
 
-    func test_showAuth_whenCalled_shouldUpdateStateToAuth() {
+    func test_showAuth_whenCalled_shouldUpdateStateToAuth_shouldInitViewState() {
         // When
         navigator.showAuthentication()
 
         // Expect
         XCTAssertEqual(navigator.state, .auth)
         XCTAssertTrue(navigator.models[.auth] is AuthenticationViewState)
+    }
+
+    func test_showDashboard_whenCalled_shouldUpdateState_shouldInitViewState() {
+        // When
+        navigator.showDashboard()
+
+        // Expect
+        XCTAssertEqual(navigator.state, .dashboard)
+        XCTAssertTrue(navigator.models[.dashboard] is DashboardViewState)
     }
 }

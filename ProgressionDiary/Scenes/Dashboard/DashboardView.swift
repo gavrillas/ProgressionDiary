@@ -1,7 +1,7 @@
 import SwiftUI
 
 class DashboardViewState: ObservableObject {
-    @Published var text: String = ""
+    @Published var text: String = "This is Dashboard"
 }
 
 struct DashboardView<ViewModel: DashboardViewModelUseCase,

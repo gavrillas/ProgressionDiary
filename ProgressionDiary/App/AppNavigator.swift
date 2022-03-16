@@ -44,6 +44,7 @@ class AppNavigator: AppNavigatorUseCase {
     }
 
     func showDashboard() {
-        
+        let viewState = DashboardViewState()
+        navigate(to: .dashboard, model: viewState)
     }
 }

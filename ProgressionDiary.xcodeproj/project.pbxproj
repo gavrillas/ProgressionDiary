@@ -42,6 +42,7 @@
 		6DD9A69127E212E000AAC8FD /* DashboardNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD9A69027E212E000AAC8FD /* DashboardNavigator.swift */; };
 		6DD9A69327E2130900AAC8FD /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD9A69227E2130900AAC8FD /* DashboardViewModel.swift */; };
 		6DD9A69527E2157D00AAC8FD /* DashboardViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD9A69427E2157D00AAC8FD /* DashboardViewModelTest.swift */; };
+		6DD9A69727E224E500AAC8FD /* DashboardNavigatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD9A69627E224E500AAC8FD /* DashboardNavigatorTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		6DD9A69027E212E000AAC8FD /* DashboardNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavigator.swift; sourceTree = "<group>"; };
 		6DD9A69227E2130900AAC8FD /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		6DD9A69427E2157D00AAC8FD /* DashboardViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModelTest.swift; sourceTree = "<group>"; };
+		6DD9A69627E224E500AAC8FD /* DashboardNavigatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavigatorTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				6D1A7FE627E100AF001AFDCA /* AppNavigatorTest.swift */,
+				6DD9A69627E224E500AAC8FD /* DashboardNavigatorTest.swift */,
 			);
 			path = Navigator;
 			sourceTree = "<group>";
@@ -320,11 +323,19 @@
 		6DD9A68D27E2128700AAC8FD /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				6DD9A69827E2257300AAC8FD /* Profile */,
 				6DD9A68E27E212C400AAC8FD /* DashboardView.swift */,
 				6DD9A69027E212E000AAC8FD /* DashboardNavigator.swift */,
 				6DD9A69227E2130900AAC8FD /* DashboardViewModel.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		6DD9A69827E2257300AAC8FD /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,6 +537,7 @@
 				6DD9A69527E2157D00AAC8FD /* DashboardViewModelTest.swift in Sources */,
 				6D1A7FE727E100AF001AFDCA /* AppNavigatorTest.swift in Sources */,
 				6D1A7FEB27E10F19001AFDCA /* AuthhenticationViewModelTest.swift in Sources */,
+				6DD9A69727E224E500AAC8FD /* DashboardNavigatorTest.swift in Sources */,
 				6D7CD4FD27E0BEEB00012150 /* AppViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
