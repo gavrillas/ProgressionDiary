@@ -11,6 +11,17 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Txt {
 
+  internal enum Authentication {
+    /// Email cím:
+    internal static let email = Txt.tr("Localizable", "authentication.email")
+    /// Bejelentkezés
+    internal static let login = Txt.tr("Localizable", "authentication.login")
+    /// Jelszó
+    internal static let password = Txt.tr("Localizable", "authentication.password")
+    /// Regisztráció
+    internal static let register = Txt.tr("Localizable", "authentication.register")
+  }
+
   internal enum General {
     /// Ok
     internal static let ok = Txt.tr("Localizable", "general.ok")

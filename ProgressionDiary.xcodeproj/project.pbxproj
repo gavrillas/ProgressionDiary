@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D1A7FE727E100AF001AFDCA /* AppNavigatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A7FE627E100AF001AFDCA /* AppNavigatorTest.swift */; };
+		6D1A7FEB27E10F19001AFDCA /* AuthhenticationViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A7FEA27E10F19001AFDCA /* AuthhenticationViewModelTest.swift */; };
 		6D7CD49827DF769500012150 /* ProgressionDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD49727DF769500012150 /* ProgressionDiaryApp.swift */; };
-		6D7CD49A27DF769500012150 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD49927DF769500012150 /* ContentView.swift */; };
 		6D7CD49C27DF769700012150 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D7CD49B27DF769700012150 /* Assets.xcassets */; };
 		6D7CD49F27DF769700012150 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D7CD49E27DF769700012150 /* Preview Assets.xcassets */; };
 		6D7CD4A127DF769700012150 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4A027DF769700012150 /* Persistence.swift */; };
 		6D7CD4A427DF769700012150 /* ProgressionDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4A227DF769700012150 /* ProgressionDiary.xcdatamodeld */; };
-		6D7CD4AE27DF769800012150 /* ProgressionDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4AD27DF769800012150 /* ProgressionDiaryTests.swift */; };
 		6D7CD4B827DF769800012150 /* ProgressionDiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4B727DF769800012150 /* ProgressionDiaryUITests.swift */; };
 		6D7CD4BA27DF769800012150 /* ProgressionDiaryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4B927DF769800012150 /* ProgressionDiaryUITestsLaunchTests.swift */; };
 		6D7CD4C727DF78A100012150 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D7CD4C627DF78A100012150 /* GoogleService-Info.plist */; };
@@ -25,6 +25,19 @@
 		6D7CD4DC27DF860B00012150 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4DA27DF860A00012150 /* Localizable.swift */; };
 		6D7CD4E027DF890800012150 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4DF27DF890800012150 /* AuthService.swift */; };
 		6D7CD4E327DF8D8A00012150 /* Error+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4E227DF8D8A00012150 /* Error+Extensions.swift */; };
+		6D7CD4E927DFC62C00012150 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4E827DFC62C00012150 /* AppNavigator.swift */; };
+		6D7CD4EC27DFC6A100012150 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 6D7CD4EB27DFC6A100012150 /* Resolver */; };
+		6D7CD4EF27DFC6F400012150 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4EE27DFC6F300012150 /* Navigator.swift */; };
+		6D7CD4F427E0B61800012150 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4F327E0B61800012150 /* AppViewModel.swift */; };
+		6D7CD4FD27E0BEEB00012150 /* AppViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4FC27E0BEEB00012150 /* AppViewModelTest.swift */; };
+		6D7CD4FE27E0C00100012150 /* Mock.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD4F827E0B94D00012150 /* Mock.generated.swift */; };
+		6D7CD50227E0ED9400012150 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD50127E0ED9400012150 /* AppView.swift */; };
+		6D7CD50527E0EEE300012150 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD50427E0EEE300012150 /* DI.swift */; };
+		6D7CD50727E0EF1700012150 /* DI+Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD50627E0EF1700012150 /* DI+Navigator.swift */; };
+		6D7CD50927E0EF9700012150 /* DI+Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD50827E0EF9700012150 /* DI+Services.swift */; };
+		6D7CD50B27E0F02800012150 /* DI+ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD50A27E0F02800012150 /* DI+ViewModels.swift */; };
+		6D7CD50D27E0F3C900012150 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD50C27E0F3C900012150 /* AuthenticationViewModel.swift */; };
+		6D7CD50F27E0F3DE00012150 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7CD50E27E0F3DD00012150 /* AuthenticationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,15 +58,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D1A7FE627E100AF001AFDCA /* AppNavigatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigatorTest.swift; sourceTree = "<group>"; };
+		6D1A7FEA27E10F19001AFDCA /* AuthhenticationViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthhenticationViewModelTest.swift; sourceTree = "<group>"; };
 		6D7CD49427DF769500012150 /* ProgressionDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgressionDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D7CD49727DF769500012150 /* ProgressionDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionDiaryApp.swift; sourceTree = "<group>"; };
-		6D7CD49927DF769500012150 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6D7CD49B27DF769700012150 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D7CD49E27DF769700012150 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6D7CD4A027DF769700012150 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		6D7CD4A327DF769700012150 /* ProgressionDiary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProgressionDiary.xcdatamodel; sourceTree = "<group>"; };
 		6D7CD4A927DF769800012150 /* ProgressionDiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressionDiaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D7CD4AD27DF769800012150 /* ProgressionDiaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionDiaryTests.swift; sourceTree = "<group>"; };
 		6D7CD4B327DF769800012150 /* ProgressionDiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressionDiaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D7CD4B727DF769800012150 /* ProgressionDiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionDiaryUITests.swift; sourceTree = "<group>"; };
 		6D7CD4B927DF769800012150 /* ProgressionDiaryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionDiaryUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -63,6 +76,18 @@
 		6D7CD4DA27DF860A00012150 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Localizable.swift; path = ProgressionDiary/Resources/Generated/Localizable.swift; sourceTree = SOURCE_ROOT; };
 		6D7CD4DF27DF890800012150 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		6D7CD4E227DF8D8A00012150 /* Error+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
+		6D7CD4E827DFC62C00012150 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
+		6D7CD4EE27DFC6F300012150 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		6D7CD4F327E0B61800012150 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		6D7CD4F827E0B94D00012150 /* Mock.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mock.generated.swift; sourceTree = "<group>"; };
+		6D7CD4FC27E0BEEB00012150 /* AppViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModelTest.swift; sourceTree = "<group>"; };
+		6D7CD50127E0ED9400012150 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		6D7CD50427E0EEE300012150 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
+		6D7CD50627E0EF1700012150 /* DI+Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DI+Navigator.swift"; sourceTree = "<group>"; };
+		6D7CD50827E0EF9700012150 /* DI+Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DI+Services.swift"; sourceTree = "<group>"; };
+		6D7CD50A27E0F02800012150 /* DI+ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DI+ViewModels.swift"; sourceTree = "<group>"; };
+		6D7CD50C27E0F3C900012150 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		6D7CD50E27E0F3DD00012150 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D7CD4EC27DFC6A100012150 /* Resolver in Frameworks */,
 				6D7CD4CA27DF7A2200012150 /* FirebaseAuth in Frameworks */,
 				6D7CD4CC27DF7A2200012150 /* FirebaseFirestore in Frameworks */,
 			);
@@ -93,6 +119,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D1A7FE827E10D42001AFDCA /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				6D1A7FE627E100AF001AFDCA /* AppNavigatorTest.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		6D1A7FE927E10D4D001AFDCA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6D7CD4FC27E0BEEB00012150 /* AppViewModelTest.swift */,
+				6D1A7FEA27E10F19001AFDCA /* AuthhenticationViewModelTest.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		6D7CD48B27DF769500012150 = {
 			isa = PBXGroup;
 			children = (
@@ -116,11 +159,13 @@
 		6D7CD49627DF769500012150 /* ProgressionDiary */ = {
 			isa = PBXGroup;
 			children = (
+				6D7CD50327E0EE8C00012150 /* DI */,
+				6D7CD4F227E0B5E500012150 /* App */,
+				6D7CD4ED27DFC6DD00012150 /* Common */,
 				6D7CD4E127DF8D7300012150 /* Extensions */,
 				6D7CD4DE27DF88F500012150 /* Services */,
 				6D7CD4D227DF822C00012150 /* Resources */,
-				6D7CD49727DF769500012150 /* ProgressionDiaryApp.swift */,
-				6D7CD49927DF769500012150 /* ContentView.swift */,
+				6D7CD4E427DFC55900012150 /* Scenes */,
 				6D7CD4A027DF769700012150 /* Persistence.swift */,
 				6D7CD4A227DF769700012150 /* ProgressionDiary.xcdatamodeld */,
 				6D7CD4C627DF78A100012150 /* GoogleService-Info.plist */,
@@ -140,7 +185,8 @@
 		6D7CD4AC27DF769800012150 /* ProgressionDiaryTests */ = {
 			isa = PBXGroup;
 			children = (
-				6D7CD4AD27DF769800012150 /* ProgressionDiaryTests.swift */,
+				6D1A7FE927E10D4D001AFDCA /* ViewModel */,
+				6D1A7FE827E10D42001AFDCA /* Navigator */,
 				6D7CD4D127DF7F4A00012150 /* Generated */,
 			);
 			path = ProgressionDiaryTests;
@@ -158,6 +204,7 @@
 		6D7CD4D127DF7F4A00012150 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				6D7CD4F827E0B94D00012150 /* Mock.generated.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -213,6 +260,53 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		6D7CD4E427DFC55900012150 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				6D7CD4E527DFC56B00012150 /* AuthenticationScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		6D7CD4E527DFC56B00012150 /* AuthenticationScene */ = {
+			isa = PBXGroup;
+			children = (
+				6D7CD50C27E0F3C900012150 /* AuthenticationViewModel.swift */,
+				6D7CD50E27E0F3DD00012150 /* AuthenticationView.swift */,
+			);
+			path = AuthenticationScene;
+			sourceTree = "<group>";
+		};
+		6D7CD4ED27DFC6DD00012150 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6D7CD4EE27DFC6F300012150 /* Navigator.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		6D7CD4F227E0B5E500012150 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6D7CD49727DF769500012150 /* ProgressionDiaryApp.swift */,
+				6D7CD4F327E0B61800012150 /* AppViewModel.swift */,
+				6D7CD4E827DFC62C00012150 /* AppNavigator.swift */,
+				6D7CD50127E0ED9400012150 /* AppView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6D7CD50327E0EE8C00012150 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				6D7CD50427E0EEE300012150 /* DI.swift */,
+				6D7CD50627E0EF1700012150 /* DI+Navigator.swift */,
+				6D7CD50827E0EF9700012150 /* DI+Services.swift */,
+				6D7CD50A27E0F02800012150 /* DI+ViewModels.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -233,6 +327,7 @@
 			packageProductDependencies = (
 				6D7CD4C927DF7A2200012150 /* FirebaseAuth */,
 				6D7CD4CB27DF7A2200012150 /* FirebaseFirestore */,
+				6D7CD4EB27DFC6A100012150 /* Resolver */,
 			);
 			productName = ProgressionDiary;
 			productReference = 6D7CD49427DF769500012150 /* ProgressionDiary.app */;
@@ -292,6 +387,7 @@
 					};
 					6D7CD4A827DF769800012150 = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 						TestTargetID = 6D7CD49327DF769500012150;
 					};
 					6D7CD4B227DF769800012150 = {
@@ -311,8 +407,8 @@
 			mainGroup = 6D7CD48B27DF769500012150;
 			packageReferences = (
 				6D7CD4C827DF7A2200012150 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				6D7CD4CD27DF7DBF00012150 /* XCRemoteSwiftPackageReference "Resolver" */,
 				6D7CD4CE27DF7EA400012150 /* XCRemoteSwiftPackageReference "SwiftyMocky" */,
+				6D7CD4EA27DFC6A000012150 /* XCRemoteSwiftPackageReference "Resolver" */,
 			);
 			productRefGroup = 6D7CD49527DF769500012150 /* Products */;
 			projectDirPath = "";
@@ -381,9 +477,18 @@
 			files = (
 				6D7CD4A127DF769700012150 /* Persistence.swift in Sources */,
 				6D7CD4A427DF769700012150 /* ProgressionDiary.xcdatamodeld in Sources */,
-				6D7CD49A27DF769500012150 /* ContentView.swift in Sources */,
+				6D7CD50D27E0F3C900012150 /* AuthenticationViewModel.swift in Sources */,
+				6D7CD50927E0EF9700012150 /* DI+Services.swift in Sources */,
+				6D7CD4F427E0B61800012150 /* AppViewModel.swift in Sources */,
+				6D7CD50527E0EEE300012150 /* DI.swift in Sources */,
+				6D7CD50F27E0F3DE00012150 /* AuthenticationView.swift in Sources */,
+				6D7CD50B27E0F02800012150 /* DI+ViewModels.swift in Sources */,
+				6D7CD50727E0EF1700012150 /* DI+Navigator.swift in Sources */,
+				6D7CD4E927DFC62C00012150 /* AppNavigator.swift in Sources */,
 				6D7CD4DB27DF860B00012150 /* Assets.swift in Sources */,
+				6D7CD4EF27DFC6F400012150 /* Navigator.swift in Sources */,
 				6D7CD4DC27DF860B00012150 /* Localizable.swift in Sources */,
+				6D7CD50227E0ED9400012150 /* AppView.swift in Sources */,
 				6D7CD49827DF769500012150 /* ProgressionDiaryApp.swift in Sources */,
 				6D7CD4E327DF8D8A00012150 /* Error+Extensions.swift in Sources */,
 				6D7CD4E027DF890800012150 /* AuthService.swift in Sources */,
@@ -394,7 +499,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D7CD4AE27DF769800012150 /* ProgressionDiaryTests.swift in Sources */,
+				6D7CD4FE27E0C00100012150 /* Mock.generated.swift in Sources */,
+				6D1A7FE727E100AF001AFDCA /* AppNavigatorTest.swift in Sources */,
+				6D1A7FEB27E10F19001AFDCA /* AuthhenticationViewModelTest.swift in Sources */,
+				6D7CD4FD27E0BEEB00012150 /* AppViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,15 +721,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KMU6VV9XR5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = GK.ProgressionDiaryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProgressionDiary.app/ProgressionDiary";
@@ -633,11 +748,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KMU6VV9XR5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = GK.ProgressionDiaryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -734,20 +855,20 @@
 				kind = branch;
 			};
 		};
-		6D7CD4CD27DF7DBF00012150 /* XCRemoteSwiftPackageReference "Resolver" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hmlongco/Resolver.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		6D7CD4CE27DF7EA400012150 /* XCRemoteSwiftPackageReference "SwiftyMocky" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MakeAWishFoundation/SwiftyMocky";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 4.0.0;
+			};
+		};
+		6D7CD4EA27DFC6A000012150 /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -767,6 +888,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6D7CD4CE27DF7EA400012150 /* XCRemoteSwiftPackageReference "SwiftyMocky" */;
 			productName = SwiftyMocky;
+		};
+		6D7CD4EB27DFC6A100012150 /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6D7CD4EA27DFC6A000012150 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
 		};
 /* End XCSwiftPackageProductDependency section */
 

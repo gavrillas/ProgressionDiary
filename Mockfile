@@ -4,7 +4,7 @@ ProgressionDiary UnitTests:
   sources:
     include:
     - ./ProgressionDiary
-  output: ./ProgressionDiary Tests/Generated/Mock.generated.swift
+  output: ./ProgressionDiaryTests/Generated/Mock.generated.swift
   targets:
   - ProgressionDiary
   testable:

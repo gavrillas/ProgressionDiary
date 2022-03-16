@@ -12,8 +12,9 @@ enum UserState {
     case loggedOut
 }
 
-//sourcery: AutoMockable
+// sourcery: AutoMockable
 protocol AuthServiceUseCase {
+    var currentUserState: UserState { get }
     var userStateChangePublisher: AnyPublisher<UserState, Never> { get }
     func register(with email: String, password: String) -> AnyPublisher<Void, AuthServiceError>
     func signIn(with email: String, password: String) -> AnyPublisher<Void, AuthServiceError>
@@ -40,6 +41,10 @@ class AuthService {
 }
 
 extension AuthService: AuthServiceUseCase {
+    var currentUserState: UserState {
+        Auth.auth().currentUser == nil ? .loggedOut : .loggedIn
+    }
+
     var userStateChangePublisher: AnyPublisher<UserState, Never> {
         if authStateHandler == nil {
             authStateHandler = Auth.auth().addStateDidChangeListener { [weak self] _, user in

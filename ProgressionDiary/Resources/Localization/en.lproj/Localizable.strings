@@ -1,2 +1,7 @@
 /* General */
 "general.ok" = "Ok";
+
+"authentication.login" = "Bejelentkezés";
+"authentication.register" = "Regisztráció";
+"authentication.email" = "Email cím:";
+"authentication.password" = "Jelszó";

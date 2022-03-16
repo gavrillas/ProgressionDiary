@@ -149,9 +149,9 @@
         "package": "Resolver",
         "repositoryURL": "https://github.com/hmlongco/Resolver.git",
         "state": {
-          "branch": "master",
-          "revision": "bd565aae33a08dd4e10747bfb98e2bf8a63bfa28",
-          "version": null
+          "branch": null,
+          "revision": "97de0b0320036607564af4a60025b48f8d041221",
+          "version": "1.5.0"
         }
       },
       {
