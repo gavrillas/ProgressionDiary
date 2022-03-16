@@ -16,6 +16,7 @@ enum UserState {
 protocol AuthServiceUseCase {
     var currentUserState: UserState { get }
     var userStateChangePublisher: AnyPublisher<UserState, Never> { get }
+
     func register(with email: String, password: String) -> AnyPublisher<Void, AuthServiceError>
     func signIn(with email: String, password: String) -> AnyPublisher<Void, AuthServiceError>
     func signOut() -> AnyPublisher<Void, AuthServiceError>

@@ -18,7 +18,7 @@ class AuthenticationViewState: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     @Published var passwordConfirm = ""
-    @Published var isLoaing = false
+    @Published var isLoading = false
     @Published var selectedSegment: SegmentState = .login
     @Published var isButtonDisabled = true
 
@@ -57,9 +57,9 @@ struct AuthenticationView<ViewModel: AuthenticationViewModelUseCase>: View {
             }.padding()
                 .disabled(state.isButtonDisabled)
             Spacer()
-        }.allowsHitTesting(!state.isLoaing)
+        }.allowsHitTesting(!state.isLoading)
         .overlay() {
-            if state.isLoaing {
+            if state.isLoading {
                 ProgressView()
                     .progressViewStyle(.circular)
             }

@@ -3,10 +3,12 @@ import Combine
 import SwiftyMocky
 @testable import ProgressionDiary
 
-
 class DashboardViewModelTest: XCTestCase {
+    // MARK: - Mocks
     var state: DashboardViewState!
     var mockNavigator: DashboardNavigatorUseCaseMock!
+
+    // MARK: - SUT
     var viewModel: DashboardViewModel<DashboardNavigatorUseCaseMock>!
 
     var cancellables = Set<AnyCancellable>()
