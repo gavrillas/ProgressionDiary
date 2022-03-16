@@ -15,10 +15,12 @@ class AuthenticationViewState: ObservableObject {
         }
     }
     
-    @Published var email: String = ""
-    @Published var password: String = ""
-    @Published var isLoaing: Bool = false
+    @Published var email = ""
+    @Published var password = ""
+    @Published var passwordConfirm = ""
+    @Published var isLoaing = false
     @Published var selectedSegment: SegmentState = .login
+    @Published var isButtonDisabled = true
 
     let emailTitle = Txt.Authentication.email
     let paswordTitle = Txt.Authentication.password
@@ -36,7 +38,6 @@ struct AuthenticationView<ViewModel: AuthenticationViewModelUseCase>: View {
 
     var body: some View {
         VStack {
-            Spacer()
             Picker(state.selectedSegment.title, selection: $state.selectedSegment) {
                 ForEach(state.segmentedOptions, id: \.self) {
                     Text($0.title).tag($0)
@@ -45,11 +46,16 @@ struct AuthenticationView<ViewModel: AuthenticationViewModelUseCase>: View {
                 .padding()
             TextField(state.emailTitle, text: $state.email)
                 .padding()
-            TextField(state.paswordTitle, text: $state.password)
+            SecureField(state.paswordTitle, text: $state.password)
                 .padding()
+            if state.selectedSegment == .register {
+                SecureField(state.paswordTitle, text: $state.password)
+                    .padding()
+            }
             Button(state.selectedSegment.title) {
 
             }.padding()
+                .disabled(state.isButtonDisabled)
             Spacer()
         }.allowsHitTesting(!state.isLoaing)
         .overlay() {
