@@ -49,11 +49,11 @@ struct AuthenticationView<ViewModel: AuthenticationViewModelUseCase>: View {
             SecureField(state.paswordTitle, text: $state.password)
                 .padding()
             if state.selectedSegment == .register {
-                SecureField(state.paswordTitle, text: $state.password)
+                SecureField(state.paswordTitle, text: $state.passwordConfirm)
                     .padding()
             }
             Button(state.selectedSegment.title) {
-
+                viewModel.buttonDidTap()
             }.padding()
                 .disabled(state.isButtonDisabled)
             Spacer()

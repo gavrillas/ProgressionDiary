@@ -31,7 +31,8 @@ class AppNavigator: AppNavigatorUseCase {
             let viewState: AuthenticationViewState = inject() ?? .init()
             AuthenticationView<AuthenticationViewModel>(viewModel: Resolver.resolve(args: viewState))
         case .dashboard:
-            EmptyView()
+            let viewState: DashboardViewState = inject() ?? .init()
+            DashboardView<DashboardViewModel, DashboardNavigator>(viewModel: Resolver.resolve(args: viewState))
         case .none:
             EmptyView()
         }
