@@ -19,5 +19,11 @@ class ProfileViewModel: ProfileViewModelUseCase {
     }
 
     func rightBarButtonDidTap() {
+        state.isLoading = true
+        authSerivce.signOut().sink { _ in
+            return
+        } receiveValue: { [weak self] _ in
+            self?.state.isLoading = false
+        }.store(in: &subscriptions)
     }
 }

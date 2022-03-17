@@ -30,7 +30,8 @@ class DashboardNavigator: DashboardNavigatorUseCase {
             // `inject()` will return the model which represents the sate of the view.
             // let viewState: ExampleState = inject() ?? .init()
             // ExampleView<ExampleViewModel, ExampleNavigator>(with: Resolver.resolve(args: viewState))
-            EmptyView()
+            let viewState: ProfileViewState = inject() ?? .init()
+            ProfileView<ProfileViewModel>(viewModel: Resolver.resolve(args: viewState))
         case .none:
             EmptyView()
         }
@@ -38,9 +39,9 @@ class DashboardNavigator: DashboardNavigatorUseCase {
 
     func showProfile() {
         // Init viewState, update it with passed parameter and invoke navigate
-        // let viewState = ExampleViewState()
+        let viewState = ProfileViewState()
         // viewState.text = text
 
-        // navigate(to: .example, model: viewState)
+        navigate(to: .profile, model: viewState)
     }
 }
