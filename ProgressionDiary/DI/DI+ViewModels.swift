@@ -9,5 +9,13 @@ extension Resolver {
         Resolver.register { (_, args) in
             AuthenticationViewModel(with: args.get(), authService: resolve())
         }
+
+        Resolver.register { (_, args) in
+            DashboardViewModel<DashboardNavigator>(with: resolve(), state: args.get())
+        }
+
+        Resolver.register { (_, args) in
+            ProfileViewModel(with: args.get(), authService: resolve())
+        }
     }
 }

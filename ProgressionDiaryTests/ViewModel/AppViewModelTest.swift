@@ -3,7 +3,6 @@ import Combine
 import SwiftyMocky
 @testable import ProgressionDiary
 
-
 class AppViewModelTest: XCTestCase {
     // MARK: - Mocks
     var mockNavigator: AppNavigatorUseCaseMock!

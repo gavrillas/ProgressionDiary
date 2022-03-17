@@ -3,12 +3,14 @@ import Combine
 import SwiftyMocky
 @testable import ProgressionDiary
 
-
 class AuthhenticationViewModelTest: XCTestCase {
+    // MARK: - Mocks
     var state: AuthenticationViewState!
-    var viewModel: AuthenticationViewModel!
     var mockAuthService: AuthServiceUseCaseMock!
     var mockLoginSubject: PassthroughSubject<Void, AuthServiceError>!
+
+    // MARK: - SUT
+    var viewModel: AuthenticationViewModel!
 
     var cancellables = Set<AnyCancellable>()
 
@@ -46,7 +48,7 @@ class AuthhenticationViewModelTest: XCTestCase {
                1,
                .signIn(with: .value(state.email),
                        password: .value(state.password)))
-        XCTAssertTrue(state.isLoaing)
+        XCTAssertTrue(state.isLoading)
     }
 
     func test_buttonDidTap_whenLoginSuccess_shouldInvokeAuthServiceLogin_shouldUpdateIsLoading() {
@@ -66,7 +68,7 @@ class AuthhenticationViewModelTest: XCTestCase {
                1,
                .signIn(with: .value(state.email),
                        password: .value(state.password)))
-        XCTAssertFalse(state.isLoaing)
+        XCTAssertFalse(state.isLoading)
     }
 
     func test_buttonDidTap_whenRegister_shouldInvokeAuthServiceRegister_shouldUpdateIsLoading() {
@@ -85,7 +87,7 @@ class AuthhenticationViewModelTest: XCTestCase {
                1,
                .register(with: .value(state.email),
                          password: .value(state.password)))
-        XCTAssertTrue(state.isLoaing)
+        XCTAssertTrue(state.isLoading)
     }
 
     func test_buttonDidTap_whenRegisterSuccess_shouldInvokeAuthServiceRegister_shouldUpdateIsLoading() {
@@ -105,7 +107,7 @@ class AuthhenticationViewModelTest: XCTestCase {
                1,
                .register(with: .value(state.email),
                          password: .value(state.password)))
-        XCTAssertFalse(state.isLoaing)
+        XCTAssertFalse(state.isLoading)
     }
 
     func test_buttonEnableState_whenEmailFormIsNotValid_shouldBeDisabled() {

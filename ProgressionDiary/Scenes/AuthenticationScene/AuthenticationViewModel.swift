@@ -35,7 +35,7 @@ class AuthenticationViewModel: AuthenticationViewModelUseCase {
     }
 
     func buttonDidTap() {
-        state.isLoaing = true
+        state.isLoading = true
         switch state.selectedSegment {
         case .login:
             signIn()
@@ -50,7 +50,7 @@ class AuthenticationViewModel: AuthenticationViewModelUseCase {
             .sink { error in
                 return
             } receiveValue: { [weak self] in
-                self?.state.isLoaing = false
+                self?.state.isLoading = false
             }.store(in: &subscriptions)
     }
 
@@ -60,7 +60,7 @@ class AuthenticationViewModel: AuthenticationViewModelUseCase {
             .sink { error in
                 return
             } receiveValue: { [weak self]  in
-                self?.state.isLoaing = false
+                self?.state.isLoading = false
             }.store(in: &subscriptions)
     }
 

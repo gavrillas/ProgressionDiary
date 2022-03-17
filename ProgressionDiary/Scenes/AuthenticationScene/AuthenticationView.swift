@@ -18,7 +18,7 @@ class AuthenticationViewState: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     @Published var passwordConfirm = ""
-    @Published var isLoaing = false
+    @Published var isLoading = false
     @Published var selectedSegment: SegmentState = .login
     @Published var isButtonDisabled = true
 
@@ -49,17 +49,17 @@ struct AuthenticationView<ViewModel: AuthenticationViewModelUseCase>: View {
             SecureField(state.paswordTitle, text: $state.password)
                 .padding()
             if state.selectedSegment == .register {
-                SecureField(state.paswordTitle, text: $state.password)
+                SecureField(state.paswordTitle, text: $state.passwordConfirm)
                     .padding()
             }
             Button(state.selectedSegment.title) {
-
+                viewModel.buttonDidTap()
             }.padding()
                 .disabled(state.isButtonDisabled)
             Spacer()
-        }.allowsHitTesting(!state.isLoaing)
+        }.allowsHitTesting(!state.isLoading)
         .overlay() {
-            if state.isLoaing {
+            if state.isLoading {
                 ProgressView()
                     .progressViewStyle(.circular)
             }
