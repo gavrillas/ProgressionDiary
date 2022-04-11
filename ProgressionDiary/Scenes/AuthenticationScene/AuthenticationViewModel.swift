@@ -37,42 +37,30 @@ class AuthenticationViewModel: AuthenticationViewModelUseCase {
 
     func buttonDidTap() {
         state.isLoading = true
-        switch state.selectedSegment {
-        case .login:
-            signIn()
-        case .register:
-            register()
-        }
+        authenticate()
+            .mapError{ [weak self] authError in
+                self?.mapError(authServiceError: authError) ?? .unkown
+            }
+            .sink { [weak self] completion in
+                self?.handleError(completion: completion)
+            } receiveValue: { [weak self] in
+                self?.state.isLoading = false
+            }.store(in: &subscriptions)
     }
 
     func alertButtonDidTap() {
         state.error = nil
     }
 
-    private func signIn() {
-        authService.signIn(with: state.email,
-                           password: state.password)
-        .mapError{ [weak self] authError in
-            self?.mapError(authServiceError: authError) ?? .unkown
+    private func authenticate() -> AnyPublisher<Void, AuthServiceError> {
+        switch state.selectedSegment {
+        case .login:
+            return  authService.signIn(with: state.email,
+                                       password: state.password)
+        case .register:
+            return authService.register(with: state.email,
+                                 password: state.password)
         }
-        .sink { [weak self] completion in
-            self?.handleError(completion: completion)
-        } receiveValue: { [weak self] in
-            self?.state.isLoading = false
-        }.store(in: &subscriptions)
-    }
-
-    private func register() {
-        authService.register(with: state.email,
-                             password: state.password)
-        .mapError{ [weak self] authError in
-            self?.mapError(authServiceError: authError) ?? .unkown
-        }
-        .sink { [weak self] completion in
-            self?.handleError(completion: completion)
-        } receiveValue: { [weak self]  in
-            self?.state.isLoading = false
-        }.store(in: &subscriptions)
     }
 
     private func bindButtonDisableState() {
