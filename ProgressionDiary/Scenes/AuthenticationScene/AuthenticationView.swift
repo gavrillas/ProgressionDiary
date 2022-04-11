@@ -21,6 +21,7 @@ class AuthenticationViewState: ObservableObject {
     @Published var isLoading = false
     @Published var selectedSegment: SegmentState = .login
     @Published var isButtonDisabled = true
+    @Published var isError = false
 
     let emailTitle = Txt.Authentication.email
     let paswordTitle = Txt.Authentication.password
@@ -57,13 +58,9 @@ struct AuthenticationView<ViewModel: AuthenticationViewModelUseCase>: View {
             }.padding()
                 .disabled(state.isButtonDisabled)
             Spacer()
-        }.allowsHitTesting(!state.isLoading)
-        .overlay() {
-            if state.isLoading {
-                ProgressView()
-                    .progressViewStyle(.circular)
-            }
         }
+        .screenBackground()
+        .isLoading(isLoading: state.isLoading)
     }
 }
 

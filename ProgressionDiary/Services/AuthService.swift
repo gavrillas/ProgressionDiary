@@ -5,6 +5,15 @@ import SwiftUI
 enum AuthServiceError: Error {
     case noInternet
     case unkown
+
+    var localizedDescription: String {
+        switch self {
+        case .noInternet:
+            return "There is no internet connection."
+        case .unkown:
+            return "Ooops! Something went wrong."
+        }
+    }
 }
 
 enum UserState {
