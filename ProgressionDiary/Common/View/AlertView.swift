@@ -3,7 +3,19 @@ import SwiftUI
 struct AlertButtonPresentationModel: Identifiable {
     let text: String
     let action: () -> Void
+    let textColor: Color
+    let backgroundColor: Color
     var id: String { text }
+
+    init(text: String,
+         textColor: Color = .white,
+         backgroundColor: Color = .indigo,
+         action: @escaping () -> Void) {
+        self.text = text
+        self.textColor = textColor
+        self.backgroundColor = backgroundColor
+        self.action = action
+    }
 }
 
 struct AlertView: View {
@@ -20,7 +32,7 @@ struct AlertView: View {
         GeometryReader { geometry in
             VStack {
                 Text(text)
-                    .foregroundColor(.white)
+                    .foregroundColor(.indigo)
                     .padding()
                 switch buttonsOrientation {
                 case .vertical:
@@ -38,7 +50,7 @@ struct AlertView: View {
                 }
             }
             .frame(width: geometry.size.width)
-            .background(.cyan)
+            .background(.white)
             .cornerRadius(12)
             .offset(x: 0, y: offsetY)
             .animation(.linear(duration: 1), value: offsetY)
@@ -56,10 +68,11 @@ struct AlertView: View {
                     buttonPM.action()
                 }) {
                     Text(buttonPM.text)
+                        .foregroundColor(buttonPM.textColor)
                         .padding()
                         .frame(maxWidth: .infinity)
                 }
-                .background(.red)
+                .background(buttonPM.backgroundColor)
                 .cornerRadius(30)
             }
         }

@@ -14,6 +14,19 @@ class AuthenticationViewState: ObservableObject {
             }
         }
     }
+
+    enum AuthError: Error {
+        case noInternet, unkown
+
+        var localizedDescription: String {
+            switch self {
+            case .noInternet:
+                return "There is no internet connection."
+            case .unkown:
+                return "Ooops! Something went wrong."
+            }
+        }
+    }
     
     @Published var email = ""
     @Published var password = ""
@@ -21,7 +34,7 @@ class AuthenticationViewState: ObservableObject {
     @Published var isLoading = false
     @Published var selectedSegment: SegmentState = .login
     @Published var isButtonDisabled = true
-    @Published var isError = false
+    @Published var error: AuthError?
 
     let emailTitle = Txt.Authentication.email
     let paswordTitle = Txt.Authentication.password
@@ -61,6 +74,11 @@ struct AuthenticationView<ViewModel: AuthenticationViewModelUseCase>: View {
         }
         .screenBackground()
         .isLoading(isLoading: state.isLoading)
+        .overlay {
+            state.error.map { AlertView(text: $0.localizedDescription,
+                                        buttons: [.init(text: "Rendben", action: { viewModel.alertButtonDidTap() })],
+                                        buttonsOrientation: .vertical)}
+        }.animation(.linear, value: state.error)
     }
 }
 

@@ -5,6 +5,7 @@ protocol AuthenticationViewModelUseCase {
     var state: AuthenticationViewState { get }
 
     func buttonDidTap()
+    func alertButtonDidTap()
 }
 
 class AuthenticationViewModel: AuthenticationViewModelUseCase {
@@ -44,24 +45,34 @@ class AuthenticationViewModel: AuthenticationViewModelUseCase {
         }
     }
 
+    func alertButtonDidTap() {
+        state.error = nil
+    }
+
     private func signIn() {
         authService.signIn(with: state.email,
                            password: state.password)
-            .sink { error in
-                return
-            } receiveValue: { [weak self] in
-                self?.state.isLoading = false
-            }.store(in: &subscriptions)
+        .mapError{ [weak self] authError in
+            self?.mapError(authServiceError: authError) ?? .unkown
+        }
+        .sink { [weak self] completion in
+            self?.handleError(completion: completion)
+        } receiveValue: { [weak self] in
+            self?.state.isLoading = false
+        }.store(in: &subscriptions)
     }
 
     private func register() {
         authService.register(with: state.email,
                              password: state.password)
-            .sink { error in
-                return
-            } receiveValue: { [weak self]  in
-                self?.state.isLoading = false
-            }.store(in: &subscriptions)
+        .mapError{ [weak self] authError in
+            self?.mapError(authServiceError: authError) ?? .unkown
+        }
+        .sink { [weak self] completion in
+            self?.handleError(completion: completion)
+        } receiveValue: { [weak self]  in
+            self?.state.isLoading = false
+        }.store(in: &subscriptions)
     }
 
     private func bindButtonDisableState() {
@@ -70,10 +81,29 @@ class AuthenticationViewModel: AuthenticationViewModelUseCase {
             state.$password,
             state.$passwordConfirm
         ])
-            .map { [weak self] _ in
-                !(self?.areFieldsValid ?? false)
-            }
-            .assign(to: \.isButtonDisabled, on: self.state)
-            .store(in: &subscriptions)
+        .map { [weak self] _ in
+            !(self?.areFieldsValid ?? false)
+        }
+        .assign(to: \.isButtonDisabled, on: self.state)
+        .store(in: &subscriptions)
+    }
+
+    private func handleError(completion: Subscribers.Completion<AuthenticationViewState.AuthError>) {
+        switch completion {
+        case .failure(let error):
+            state.isLoading = false
+            state.error = error
+        case .finished:
+            return
+        }
+    }
+
+    private func mapError(authServiceError: AuthServiceError) -> AuthenticationViewState.AuthError {
+        switch authServiceError {
+        case .noInternet:
+            return .noInternet
+        case .unkown:
+            return .unkown
+        }
     }
 }
