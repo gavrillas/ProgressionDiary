@@ -21,13 +21,9 @@ struct ProfileView<ViewModel: ProfileViewModelUseCase>: View {
                 Button("logout") {
                     viewModel.rightBarButtonDidTap()
                 }
-            }.allowsHitTesting(!state.isLoading)
-            .overlay() {
-                if state.isLoading {
-                    ProgressView()
-                        .progressViewStyle(.circular)
-                }
             }
+            .screenBackground()
+            .isLoading(isLoading: state.isLoading)
     }
 }
 

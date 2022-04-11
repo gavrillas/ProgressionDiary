@@ -14,6 +14,19 @@ class AuthenticationViewState: ObservableObject {
             }
         }
     }
+
+    enum AuthError: Error {
+        case noInternet, unkown
+
+        var localizedDescription: String {
+            switch self {
+            case .noInternet:
+                return "There is no internet connection."
+            case .unkown:
+                return "Ooops! Something went wrong."
+            }
+        }
+    }
     
     @Published var email = ""
     @Published var password = ""
@@ -21,6 +34,7 @@ class AuthenticationViewState: ObservableObject {
     @Published var isLoading = false
     @Published var selectedSegment: SegmentState = .login
     @Published var isButtonDisabled = true
+    @Published var error: AuthError?
 
     let emailTitle = Txt.Authentication.email
     let paswordTitle = Txt.Authentication.password
@@ -40,30 +54,40 @@ struct AuthenticationView<ViewModel: AuthenticationViewModelUseCase>: View {
         VStack {
             Picker(state.selectedSegment.title, selection: $state.selectedSegment) {
                 ForEach(state.segmentedOptions, id: \.self) {
-                    Text($0.title).tag($0)
+                    Text($0.title)
+                        .tag($0)
                 }
             }.pickerStyle(.segmented)
                 .padding()
+                .onAppear {
+                    UISegmentedControl.appearance().backgroundColor = UIColor(Color.indigo)
+                    UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
+                    UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(Color.indigo)], for: .selected)
+                }
             TextField(state.emailTitle, text: $state.email)
-                .padding()
+                .textFieldStyle(DefaultTextFieldStyle())
             SecureField(state.paswordTitle, text: $state.password)
-                .padding()
+                .textFieldStyle(DefaultTextFieldStyle())
             if state.selectedSegment == .register {
                 SecureField(state.paswordTitle, text: $state.passwordConfirm)
-                    .padding()
+                    .textFieldStyle(DefaultTextFieldStyle())
             }
             Button(state.selectedSegment.title) {
                 viewModel.buttonDidTap()
-            }.padding()
-                .disabled(state.isButtonDisabled)
-            Spacer()
-        }.allowsHitTesting(!state.isLoading)
-        .overlay() {
-            if state.isLoading {
-                ProgressView()
-                    .progressViewStyle(.circular)
             }
+            .buttonStyle(DefaultButtonStyle())
+            .disabled(state.isButtonDisabled)
+            Spacer()
         }
+        .screenBackground()
+        .isLoading(isLoading: state.isLoading)
+        .overlay {
+            state.error.map { AlertView(text: $0.localizedDescription,
+                                        buttons: [.init(text: "Rendben", action: { viewModel.alertButtonDidTap() })],
+                                        buttonsOrientation: .vertical)}
+        }
+        .animation(.linear, value: state.selectedSegment)
+        .animation(.linear, value: state.error)
     }
 }
 

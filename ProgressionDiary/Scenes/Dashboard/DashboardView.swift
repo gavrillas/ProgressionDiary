@@ -24,6 +24,7 @@ struct DashboardView<ViewModel: DashboardViewModelUseCase,
                         viewModel.rightBarButtonDidTap()
                     }
                 }
+                .screenBackground()
                 .navigation(using: _navigator)
         }
     }

@@ -71,6 +71,27 @@ class AuthhenticationViewModelTest: XCTestCase {
         XCTAssertFalse(state.isLoading)
     }
 
+    func test_buttonDidTap_whenLoginError_shouldInvokeAuthServiceLogin_shouldUpdateIsLoading_shouldSetStateError() {
+        // Given
+        Given(mockAuthService,
+              .signIn(with: .any,
+                      password: .any,
+                      willReturn: mockLoginSubject.eraseToAnyPublisher()))
+
+        // When
+        state.selectedSegment = .login
+        viewModel.buttonDidTap()
+        mockLoginSubject.send(completion: .failure(.noInternet))
+
+        // Expect
+        Verify(mockAuthService,
+               1,
+               .signIn(with: .value(state.email),
+                       password: .value(state.password)))
+        XCTAssertFalse(state.isLoading)
+        XCTAssertNotNil(state.error)
+    }
+
     func test_buttonDidTap_whenRegister_shouldInvokeAuthServiceRegister_shouldUpdateIsLoading() {
         // Given
         Given(mockAuthService,
@@ -108,6 +129,38 @@ class AuthhenticationViewModelTest: XCTestCase {
                .register(with: .value(state.email),
                          password: .value(state.password)))
         XCTAssertFalse(state.isLoading)
+    }
+
+    func test_buttonDidTap_whenRegisterError_shouldInvokeAuthServiceRegister_shouldUpdateIsLoading_shouldSetStateError() {
+        // Given
+        Given(mockAuthService,
+              .register(with: .any,
+                      password: .any,
+                      willReturn: mockLoginSubject.eraseToAnyPublisher()))
+
+        // When
+        state.selectedSegment = .register
+        viewModel.buttonDidTap()
+        mockLoginSubject.send(completion: .failure(.noInternet))
+
+        // Expect
+        Verify(mockAuthService,
+               1,
+               .register(with: .value(state.email),
+                         password: .value(state.password)))
+        XCTAssertFalse(state.isLoading)
+        XCTAssertNotNil(state.error)
+    }
+
+    func test_alertButtonDidTap_whenInvoked_shouldSetErrorNil() {
+        // Given
+        state.error = .noInternet
+
+        // When
+        viewModel.alertButtonDidTap()
+
+        // Expect
+        XCTAssertNil(state.error)
     }
 
     func test_buttonEnableState_whenEmailFormIsNotValid_shouldBeDisabled() {
