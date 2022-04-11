@@ -13,7 +13,7 @@ struct ScreenBackground: ViewModifier {
       ZStack {
           switch style {
           case .basic:
-              LinearGradient(colors: [.purple, .indigo, .blue], startPoint: .top, endPoint: .bottom)
+              LinearGradient(colors: [.white], startPoint: .top, endPoint: .bottom)
                   .ignoresSafeArea()
           case .singleColor(let color):
               color.ignoresSafeArea()

@@ -54,22 +54,29 @@ struct AuthenticationView<ViewModel: AuthenticationViewModelUseCase>: View {
         VStack {
             Picker(state.selectedSegment.title, selection: $state.selectedSegment) {
                 ForEach(state.segmentedOptions, id: \.self) {
-                    Text($0.title).tag($0)
+                    Text($0.title)
+                        .tag($0)
                 }
             }.pickerStyle(.segmented)
                 .padding()
+                .onAppear {
+                    UISegmentedControl.appearance().backgroundColor = UIColor(Color.indigo)
+                    UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
+                    UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(Color.indigo)], for: .selected)
+                }
             TextField(state.emailTitle, text: $state.email)
-                .padding()
+                .textFieldStyle(DefaultTextFieldStyle())
             SecureField(state.paswordTitle, text: $state.password)
-                .padding()
+                .textFieldStyle(DefaultTextFieldStyle())
             if state.selectedSegment == .register {
                 SecureField(state.paswordTitle, text: $state.passwordConfirm)
-                    .padding()
+                    .textFieldStyle(DefaultTextFieldStyle())
             }
             Button(state.selectedSegment.title) {
                 viewModel.buttonDidTap()
-            }.padding()
-                .disabled(state.isButtonDisabled)
+            }
+            .buttonStyle(DefaultButtonStyle())
+            .disabled(state.isButtonDisabled)
             Spacer()
         }
         .screenBackground()
@@ -78,7 +85,9 @@ struct AuthenticationView<ViewModel: AuthenticationViewModelUseCase>: View {
             state.error.map { AlertView(text: $0.localizedDescription,
                                         buttons: [.init(text: "Rendben", action: { viewModel.alertButtonDidTap() })],
                                         buttonsOrientation: .vertical)}
-        }.animation(.linear, value: state.error)
+        }
+        .animation(.linear, value: state.selectedSegment)
+        .animation(.linear, value: state.error)
     }
 }
 

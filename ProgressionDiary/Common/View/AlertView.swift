@@ -36,17 +36,15 @@ struct AlertView: View {
                     .padding()
                 switch buttonsOrientation {
                 case .vertical:
-                    VStack(spacing: 10) {
+                    VStack {
                         alertButtons
                     }
                     .padding(.bottom, 20)
-                    .padding(.horizontal, 10)
                 case .horizontal:
                     HStack(spacing: 10) {
                         alertButtons
                     }
                     .padding(.bottom, 20)
-                    .padding(.horizontal, 10)
                 }
             }
             .frame(width: geometry.size.width)
@@ -64,16 +62,11 @@ struct AlertView: View {
     var alertButtons: some View {
         Group {
             ForEach(buttons) { buttonPM in
-                Button(action: {
+                Button(buttonPM.text) {
                     buttonPM.action()
-                }) {
-                    Text(buttonPM.text)
-                        .foregroundColor(buttonPM.textColor)
-                        .padding()
-                        .frame(maxWidth: .infinity)
                 }
-                .background(buttonPM.backgroundColor)
-                .cornerRadius(30)
+                .buttonStyle(DefaultButtonStyle(textColor: buttonPM.textColor,
+                                                 backgroundColor: buttonPM.backgroundColor))
             }
         }
     }
