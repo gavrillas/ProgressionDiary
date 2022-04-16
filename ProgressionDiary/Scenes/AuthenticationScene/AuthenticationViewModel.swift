@@ -21,20 +21,6 @@ class AuthenticationViewModel: AuthenticationViewModelUseCase {
         bindButtonDisableState()
     }
 
-    private var areFieldsValid: Bool {
-        guard isEmailFormValid else { return false }
-        guard !state.password.isEmpty else { return false }
-        guard state.selectedSegment == .register else { return true }
-        return state.password == state.passwordConfirm
-    }
-
-    private var isEmailFormValid: Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: state.email)
-    }
-
     func buttonDidTap() {
         state.isLoading = true
         authenticate()
@@ -64,22 +50,35 @@ class AuthenticationViewModel: AuthenticationViewModelUseCase {
     }
 
     private func bindButtonDisableState() {
-        Publishers.MergeMany([
-            state.$email,
-            state.$password,
-            state.$passwordConfirm
-        ])
-        .combineLatest(state.$selectedSegment)
-        .print("Combined: ", to: nil)
-        .map { [weak self] _ in
-            !(self?.areFieldsValid ?? false)
-        }
-        .assign(to: \.isButtonDisabled, on: self.state)
-        .store(in: &subscriptions)
-
-        state.$password
-            .sink { print("password: \($0)") }
+        state.$selectedSegment
+            .combineLatest(state.$email,
+                           state.$password,
+                           state.$passwordConfirm)
+            .map { [weak self] selectedSegment, email, password, passwordConfirm in
+                !(self?.areFieldsValid(email: email,
+                                       password: password,
+                                       passwordConfirm: passwordConfirm,
+                                       selectedSegment: selectedSegment) ?? false)
+            }
+            .assign(to: \.isButtonDisabled, on: self.state)
             .store(in: &subscriptions)
+    }
+
+    private func areFieldsValid(email: String,
+                                password: String,
+                                passwordConfirm: String,
+                                selectedSegment: AuthenticationViewState.SegmentState) -> Bool {
+        guard isEmailFormValid(email: email) else { return false }
+        guard !password.isEmpty else { return false }
+        guard selectedSegment == .register else { return true }
+        return password == passwordConfirm
+    }
+
+    private func isEmailFormValid(email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: state.email)
     }
 
     private func handleError(completion: Subscribers.Completion<AuthenticationViewState.AuthError>) {
