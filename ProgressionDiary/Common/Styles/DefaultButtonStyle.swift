@@ -3,8 +3,9 @@ import SwiftUI
 struct DefaultButtonStyle: ButtonStyle {
     let textColor: Color
     let backgroundColor: Color
+    @Environment(\.isEnabled) var isEnabled
 
-    init(textColor: Color = .white, backgroundColor: Color = .indigo) {
+    init(textColor: Color = .white, backgroundColor: Color = .indigoCustom) {
         self.textColor = textColor
         self.backgroundColor = backgroundColor
     }
@@ -14,9 +15,8 @@ struct DefaultButtonStyle: ButtonStyle {
             .padding()
             .frame(maxWidth: .infinity)
             .foregroundColor(configuration.isPressed ? .gray.opacity(0.5) : textColor)
-            .background(backgroundColor)
+            .background(isEnabled ? backgroundColor : backgroundColor.opacity(0.5))
             .cornerRadius(30)
-            .padding(.horizontal, 10)
     }
 }
 

@@ -202,6 +202,27 @@ class AuthhenticationViewModelTest: XCTestCase {
         XCTAssertFalse(state.isButtonDisabled)
     }
 
+    func test_buttonEnableState_whenSegmentStateChangedAfterEmailAndFirstPasswordFilled_shouldBeDisabled() {
+        // when
+        state.email = "gavrillas.kristof@gmail.com"
+        state.password = "Test1234"
+        state.passwordConfirm = ""
+        state.selectedSegment = .register
+
+        // Expect
+        XCTAssertTrue(state.isButtonDisabled)
+    }
+
+    func test_buttonEnableState_whenLoginAndPasswordOneCharacter_shouldBeEnabled() {
+        // when
+        state.selectedSegment = .login
+        state.email = "gavrillas.kristof@gmail.com"
+        state.password = "T"
+
+        // Expect
+        XCTAssertFalse(state.isButtonDisabled)
+    }
+
     func test_buttonEnableState_whenRegisterAndPasswordsAreDifferent_shouldBeDisabled() {
         // when
         state.selectedSegment = .register

@@ -1,18 +1,19 @@
 import SwiftUI
 
 struct Loading: ViewModifier {
-  let isLoading: Bool
+    let isLoading: Bool
 
-  func body(content: Content) -> some View {
-      content
-          .allowsHitTesting(!isLoading)
-          .overlay() {
-              if isLoading {
-                  ProgressView()
-                      .progressViewStyle(.circular)
-              }
-          }
-  }
+    func body(content: Content) -> some View {
+        if isLoading {
+            content
+                .allowsHitTesting(!isLoading)
+                .overlay(ProgressView()
+                    .progressViewStyle(.circular),
+                         alignment: .center)
+        } else {
+            content
+        }
+    }
 }
 
 extension View {

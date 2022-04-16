@@ -69,11 +69,17 @@ class AuthenticationViewModel: AuthenticationViewModelUseCase {
             state.$password,
             state.$passwordConfirm
         ])
+        .combineLatest(state.$selectedSegment)
+        .print("Combined: ", to: nil)
         .map { [weak self] _ in
             !(self?.areFieldsValid ?? false)
         }
         .assign(to: \.isButtonDisabled, on: self.state)
         .store(in: &subscriptions)
+
+        state.$password
+            .sink { print("password: \($0)") }
+            .store(in: &subscriptions)
     }
 
     private func handleError(completion: Subscribers.Completion<AuthenticationViewState.AuthError>) {

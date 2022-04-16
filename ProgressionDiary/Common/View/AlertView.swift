@@ -9,7 +9,7 @@ struct AlertButtonPresentationModel: Identifiable {
 
     init(text: String,
          textColor: Color = .white,
-         backgroundColor: Color = .indigo,
+         backgroundColor: Color = .indigoCustom,
          action: @escaping () -> Void) {
         self.text = text
         self.textColor = textColor
@@ -32,28 +32,30 @@ struct AlertView: View {
         GeometryReader { geometry in
             VStack {
                 Text(text)
-                    .foregroundColor(.indigo)
+                    .foregroundColor(.indigoCustom)
                     .padding()
                 switch buttonsOrientation {
                 case .vertical:
-                    VStack {
+                    VStack(spacing: 10) {
                         alertButtons
                     }
                     .padding(.bottom, 20)
+                    .padding(.horizontal, 10)
                 case .horizontal:
                     HStack(spacing: 10) {
                         alertButtons
                     }
                     .padding(.bottom, 20)
+                    .padding(.horizontal, 10)
                 }
             }
             .frame(width: geometry.size.width)
-            .background(.white)
+            //.background(.white)
             .cornerRadius(12)
             .offset(x: 0, y: offsetY)
             .animation(.linear(duration: 1), value: offsetY)
             .frame(height: geometry.size.height, alignment: .bottom)
-            .background(.black.opacity(0.6))
+            //.background(.black.opacity(0.6))
         }.onAppear() {
             offsetY = 10
         }
@@ -75,8 +77,8 @@ struct AlertView: View {
 struct AlertView_Previews: PreviewProvider {
     static var previews: some View {
         AlertView(text: "Ez egy hiba üzenet",
-                  buttons: [.init(text: "Test1", action: {}),
-                            .init(text: "Test2", action: {})],
+                  buttons: [.init(text: "Test1") {},
+                            .init(text: "Test2") {}],
                   buttonsOrientation: .horizontal)
     }
 }

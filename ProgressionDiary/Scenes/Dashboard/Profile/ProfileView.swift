@@ -14,7 +14,6 @@ struct ProfileView<ViewModel: ProfileViewModelUseCase>: View {
         self.state = viewModel.state
     }
 
-    // TODO: - Create custom view modifier for loading
     var body: some View {
         Text(state.text)
             .toolbar {

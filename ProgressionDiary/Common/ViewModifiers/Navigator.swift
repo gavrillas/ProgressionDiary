@@ -23,13 +23,13 @@ extension Navigator {
 
 extension View {
     func navigation<N: Navigator>(using navigator: ObservedObject<N>) -> some View where N.DestinationType.AllCases: RandomAccessCollection {
-        overlay {
+        overlay (
             ForEach(N.DestinationType.allCases, id: \.self) { state in
                 NavigationLink(tag: state,
                                selection: navigator.projectedValue.state,
                                destination: { navigator.wrappedValue.destination },
                                label: { EmptyView() })
             }.hidden()
-        }
+            , alignment: .center)
     }
 }

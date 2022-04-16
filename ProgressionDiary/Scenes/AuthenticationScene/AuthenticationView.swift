@@ -1,7 +1,7 @@
 import SwiftUI
 
 class AuthenticationViewState: ObservableObject {
-    enum SegmentState {
+    enum SegmentState: SegmentOption {
         case login
         case register
 
@@ -52,18 +52,8 @@ struct AuthenticationView<ViewModel: AuthenticationViewModelUseCase>: View {
 
     var body: some View {
         VStack {
-            Picker(state.selectedSegment.title, selection: $state.selectedSegment) {
-                ForEach(state.segmentedOptions, id: \.self) {
-                    Text($0.title)
-                        .tag($0)
-                }
-            }.pickerStyle(.segmented)
+            SementedControl(selectedSegment: $state.selectedSegment, options: state.segmentedOptions)
                 .padding()
-                .onAppear {
-                    UISegmentedControl.appearance().backgroundColor = UIColor(Color.indigo)
-                    UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
-                    UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(Color.indigo)], for: .selected)
-                }
             TextField(state.emailTitle, text: $state.email)
                 .textFieldStyle(DefaultTextFieldStyle())
             SecureField(state.paswordTitle, text: $state.password)
@@ -76,16 +66,17 @@ struct AuthenticationView<ViewModel: AuthenticationViewModelUseCase>: View {
                 viewModel.buttonDidTap()
             }
             .buttonStyle(DefaultButtonStyle())
+            .padding()
             .disabled(state.isButtonDisabled)
             Spacer()
         }
         .screenBackground()
         .isLoading(isLoading: state.isLoading)
-        .overlay {
+        .overlay (
             state.error.map { AlertView(text: $0.localizedDescription,
                                         buttons: [.init(text: "Rendben", action: { viewModel.alertButtonDidTap() })],
                                         buttonsOrientation: .vertical)}
-        }
+            , alignment: .center)
         .animation(.linear, value: state.selectedSegment)
         .animation(.linear, value: state.error)
     }

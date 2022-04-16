@@ -4,12 +4,9 @@ struct DefaultTextFieldStyle: TextFieldStyle {
     func _body(configuration: TextField<Self._Label>) -> some View {
         configuration
             .padding()
-            .colorMultiply(.indigo)
-            .foregroundColor(.indigo)
-            .overlay(
-                RoundedRectangle(cornerRadius: 30)
-                    .stroke(.indigo, lineWidth: 2)
-            )
+            .foregroundColor(.indigoCustom)
+            .overlay(RoundedRectangle(cornerRadius: 30)
+                .stroke(.indigoCustom, lineWidth: 2))
             .padding()
     }
 }
