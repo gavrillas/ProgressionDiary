@@ -4,7 +4,7 @@ protocol SegmentOption: Hashable {
     var title: String { get }
 }
 
-struct SementedControl<T: SegmentOption>: View {
+struct SegmentedControl<T: SegmentOption>: View {
     @Binding var selectedSegment: T
     let options: [T]
 
@@ -47,6 +47,6 @@ struct SementedControl_Previews: PreviewProvider {
     static let segmentedOptions: [SegmentState] = [.login, .register]
 
     static var previews: some View {
-        SementedControl(selectedSegment: $segmentState, options: segmentedOptions)
+        SegmentedControl(selectedSegment: $segmentState, options: segmentedOptions)
     }
 }

@@ -1,7 +1,7 @@
 import SwiftUI
 
 class DashboardViewState: ObservableObject {
-    @Published var text: String = "This is Dashboard"
+    @Published var dashboardItems: [DashboardItemPresentationModel] = []
 }
 
 struct DashboardView<ViewModel: DashboardViewModelUseCase,
@@ -9,6 +9,11 @@ struct DashboardView<ViewModel: DashboardViewModelUseCase,
     let viewModel: ViewModel
     @ObservedObject var navigator: N
     @ObservedObject var state: DashboardViewState
+
+    let columns = [
+            GridItem(.flexible()),
+            GridItem(.flexible()),
+        ]
 
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
@@ -18,14 +23,19 @@ struct DashboardView<ViewModel: DashboardViewModelUseCase,
 
     var body: some View {
         NavigationView {
-            Text(state.text)
-                .toolbar {
-                    Button("Profile") {
-                        viewModel.rightBarButtonDidTap()
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 0) {
+                    ForEach(state.dashboardItems, id: \.title) { item in
+                        DashboardItemView(presentationModel: item)
+                            .frame(height: UIScreen.main.bounds.width / 2.1)
                     }
-                }
-                .screenBackground()
-                .navigation(using: _navigator)
+                }.padding(.horizontal)
+            }
+            .navigationBarTitleDisplayMode(.large)
+            .navigationTitle("Dashboard")
+            .foregroundColor(.indigoCustom)
+            .screenBackground()
+            .navigation(using: _navigator)
         }
     }
 }

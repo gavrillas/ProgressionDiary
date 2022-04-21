@@ -52,7 +52,7 @@ struct AuthenticationView<ViewModel: AuthenticationViewModelUseCase>: View {
 
     var body: some View {
         VStack {
-            SementedControl(selectedSegment: $state.selectedSegment, options: state.segmentedOptions)
+            SegmentedControl(selectedSegment: $state.selectedSegment, options: state.segmentedOptions)
                 .padding()
             TextField(state.emailTitle, text: $state.email)
                 .textFieldStyle(DefaultTextFieldStyle())
