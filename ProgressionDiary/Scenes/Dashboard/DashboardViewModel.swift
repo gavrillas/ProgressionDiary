@@ -5,6 +5,14 @@ protocol DashboardViewModelUseCase {
     associatedtype N: DashboardNavigatorUseCase
     var state: DashboardViewState { get }
     var navigator: N { get }
+
+    func trainingDidTap()
+    func profileDidTap()
+    func traingingDiaryDidTap()
+    func foodDiaryDidTap()
+    func photoDiaryDidTap()
+    func vitaminsDidTap()
+    func exerciseDidTap()
 }
 
 class DashboardViewModel<N: DashboardNavigatorUseCase>: DashboardViewModelUseCase {
@@ -20,23 +28,65 @@ class DashboardViewModel<N: DashboardNavigatorUseCase>: DashboardViewModelUseCas
         populateDashboard()
     }
 
+    func trainingDidTap() {
+
+    }
+
     func profileDidTap() {
         navigator.showProfile()
     }
 
-    func diaryDidTap() {
+    func traingingDiaryDidTap() {
 
     }
 
+    func foodDiaryDidTap() {
+
+    }
+
+    func photoDiaryDidTap() {
+
+    }
+
+    func vitaminsDidTap() {
+        
+    }
+
+    func exerciseDidTap() {
+
+    }
+
+
     private func populateDashboard() {
         state.dashboardItems = [
-            .init(image: .init(systemName: "play.fill"), title: "Edzés", description: "Kezd el az edzést", action: {}),
-            .init(image: .init(systemName: "person.fill"), title: "Profil", description: "Szerkeszd a profilod", action: profileDidTap),
-            .init(image: .init(systemName: "calendar"), title: "Edzés napló", description: "Vezesd edzés naplódat", action: diaryDidTap),
-            .init(image: .init(systemName: "note.text"), title: "Étkezési napló", description: "Vezesd a saját táplálkozási naplódat", action: diaryDidTap),
-            .init(image: .init(systemName: "camera"), title: "Fénykép napló", description: "Dokumentáld fejlődésed fényképekkel", action: diaryDidTap),
-            .init(image: .init(systemName: "pills.fill"), title: "Vitaminok", description: "Emlékeztesd magad a vitamin bevitelre", action: diaryDidTap),
-            .init(image: .init(systemName: "figure.walk"), title: "Gyakorlatok", description: "Adj hozzá új gyakorlatot", action: diaryDidTap),
+            .init(image: .init(systemName: "play.fill"),
+                  title: Txt.Dashboard.Training.title,
+                  description: Txt.Dashboard.Training.description,
+                  action: trainingDidTap),
+            .init(image: .init(systemName: "person.fill"),
+                  title: Txt.Dashboard.Profil.title,
+                  description: Txt.Dashboard.Profil.description,
+                  action: profileDidTap),
+            .init(image: .init(systemName: "calendar"),
+                  title: Txt.Dashboard.TrainingDiary.title,
+                  description: Txt.Dashboard.TrainingDiary.description,
+                  action: traingingDiaryDidTap),
+            .init(image: .init(systemName: "note.text"),
+                  title: Txt.Dashboard.FoodDiary.title,
+                  description: Txt.Dashboard.FoodDiary.description,
+                  action: foodDiaryDidTap),
+            .init(image: .init(systemName: "camera"),
+                  title: Txt.Dashboard.PhotoDiary.title,
+                  description: Txt.Dashboard.PhotoDiary.description,
+                  action: photoDiaryDidTap),
+            .init(image: .init(systemName: "pills.fill"),
+                  title: Txt.Dashboard.Vitamins.title,
+                  description: Txt.Dashboard.Vitamins.description,
+                  action: vitaminsDidTap),
+            .init(image: .init(systemName: "figure.walk"),
+                  title: Txt.Dashboard.Exercise.title,
+                  description: Txt.Dashboard.Exercise.description,
+                  action: exerciseDidTap),
         ]
     }
 }

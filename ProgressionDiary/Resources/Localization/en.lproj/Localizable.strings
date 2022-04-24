@@ -1,7 +1,24 @@
 /* General */
 "general.ok" = "Ok";
 
+/* Authentication */
 "authentication.login" = "Bejelentkezés";
 "authentication.register" = "Regisztráció";
 "authentication.email" = "Email cím:";
 "authentication.password" = "Jelszó";
+
+/* Dashboard */
+"dashboard.training.title" = "Edzés";
+"dashboard.training.description" = "Kezd el az edzést";
+"dashboard.profil.title" = "Profil";
+"dashboard.profil.description" = "Szerkeszd a profilod";
+"dashboard.training_diary.title" = "Edzés napló";
+"dashboard.training_diary.description" = "Vezesd edzés naplódat";
+"dashboard.food_diary.title" = "Étkezési napló";
+"dashboard.food_diary.description" = "Vezesd a saját táplálkozási naplódat";
+"dashboard.photo_diary.title" = "Fénykép napló";
+"dashboard.photo_diary.description" = "Dokumentáld fejlődésed fényképekkel";
+"dashboard.vitamins.title" = "Vitaminok";
+"dashboard.vitamins.description" = "Emlékeztesd magad a vitamin bevitelre";
+"dashboard.exercise.title" = "Gyakorlatok";
+"dashboard.exercise.description" = "Adj hozzá új gyakorlatot";

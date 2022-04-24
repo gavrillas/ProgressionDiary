@@ -1,12 +1,13 @@
-sourceryCommand: null
+sourceryCommand: mint run krzysztofzablocki/Sourcery@1.8.0
 sourceryTemplate: null
-ProgressionDiary UnitTests:
+ProgressionDiaryTests:
   sources:
     include:
     - ./ProgressionDiary
-  output: ./ProgressionDiaryTests/Generated/Mock.generated.swift
+  output: 
+      ./ProgressionDiaryTests/Generated/Mock.generated.swift
   targets:
-  - ProgressionDiary
+  - ProgressionDiaryTests
   testable:
   - ProgressionDiary
   import:

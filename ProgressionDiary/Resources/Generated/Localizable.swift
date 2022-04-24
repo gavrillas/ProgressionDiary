@@ -22,6 +22,51 @@ internal enum Txt {
     internal static let register = Txt.tr("Localizable", "authentication.register")
   }
 
+  internal enum Dashboard {
+    internal enum Exercise {
+      /// Adj hozzá új gyakorlatot
+      internal static let description = Txt.tr("Localizable", "dashboard.exercise.description")
+      /// Gyakorlatok
+      internal static let title = Txt.tr("Localizable", "dashboard.exercise.title")
+    }
+    internal enum FoodDiary {
+      /// Vezesd a saját táplálkozási naplódat
+      internal static let description = Txt.tr("Localizable", "dashboard.food_diary.description")
+      /// Étkezési napló
+      internal static let title = Txt.tr("Localizable", "dashboard.food_diary.title")
+    }
+    internal enum PhotoDiary {
+      /// Dokumentáld fejlődésed fényképekkel
+      internal static let description = Txt.tr("Localizable", "dashboard.photo_diary.description")
+      /// Fénykép napló
+      internal static let title = Txt.tr("Localizable", "dashboard.photo_diary.title")
+    }
+    internal enum Profil {
+      /// Szerkeszd a profilod
+      internal static let description = Txt.tr("Localizable", "dashboard.profil.description")
+      /// Profil
+      internal static let title = Txt.tr("Localizable", "dashboard.profil.title")
+    }
+    internal enum Training {
+      /// Kezd el az edzést
+      internal static let description = Txt.tr("Localizable", "dashboard.training.description")
+      /// Edzés
+      internal static let title = Txt.tr("Localizable", "dashboard.training.title")
+    }
+    internal enum TrainingDiary {
+      /// Vezesd edzés naplódat
+      internal static let description = Txt.tr("Localizable", "dashboard.training_diary.description")
+      /// Edzés napló
+      internal static let title = Txt.tr("Localizable", "dashboard.training_diary.title")
+    }
+    internal enum Vitamins {
+      /// Emlékeztesd magad a vitamin bevitelre
+      internal static let description = Txt.tr("Localizable", "dashboard.vitamins.description")
+      /// Vitaminok
+      internal static let title = Txt.tr("Localizable", "dashboard.vitamins.title")
+    }
+  }
+
   internal enum General {
     /// Ok
     internal static let ok = Txt.tr("Localizable", "general.ok")

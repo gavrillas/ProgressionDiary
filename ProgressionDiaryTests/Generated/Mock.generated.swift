@@ -1,4 +1,4 @@
-// Generated using Sourcery 1.6.0 — https://github.com/krzysztofzablocki/Sourcery
+// Generated using Sourcery 1.8.0 — https://github.com/krzysztofzablocki/Sourcery
 // DO NOT EDIT
 
 
@@ -661,9 +661,45 @@ open class DashboardNavigatorUseCaseMock: DashboardNavigatorUseCase, Mock {
 
 
 
+    open func showTraining() {
+        addInvocation(.m_showTraining)
+		let perform = methodPerformValue(.m_showTraining) as? () -> Void
+		perform?()
+    }
+
     open func showProfile() {
         addInvocation(.m_showProfile)
 		let perform = methodPerformValue(.m_showProfile) as? () -> Void
+		perform?()
+    }
+
+    open func showTrainingDiary() {
+        addInvocation(.m_showTrainingDiary)
+		let perform = methodPerformValue(.m_showTrainingDiary) as? () -> Void
+		perform?()
+    }
+
+    open func showFoodDiary() {
+        addInvocation(.m_showFoodDiary)
+		let perform = methodPerformValue(.m_showFoodDiary) as? () -> Void
+		perform?()
+    }
+
+    open func showPhotoDiary() {
+        addInvocation(.m_showPhotoDiary)
+		let perform = methodPerformValue(.m_showPhotoDiary) as? () -> Void
+		perform?()
+    }
+
+    open func showVitamins() {
+        addInvocation(.m_showVitamins)
+		let perform = methodPerformValue(.m_showVitamins) as? () -> Void
+		perform?()
+    }
+
+    open func showExercise() {
+        addInvocation(.m_showExercise)
+		let perform = methodPerformValue(.m_showExercise) as? () -> Void
 		perform?()
     }
 
@@ -688,7 +724,13 @@ open class DashboardNavigatorUseCaseMock: DashboardNavigatorUseCase, Mock {
 
 
     fileprivate enum MethodType {
+        case m_showTraining
         case m_showProfile
+        case m_showTrainingDiary
+        case m_showFoodDiary
+        case m_showPhotoDiary
+        case m_showVitamins
+        case m_showExercise
         case m_inject
         case m_navigate__to_destinationmodel_model(Parameter<DestinationType>, Parameter<GenericAttribute>)
         case p_state_get
@@ -699,7 +741,19 @@ open class DashboardNavigatorUseCaseMock: DashboardNavigatorUseCase, Mock {
 
         static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
             switch (lhs, rhs) {
+            case (.m_showTraining, .m_showTraining): return .match
+
             case (.m_showProfile, .m_showProfile): return .match
+
+            case (.m_showTrainingDiary, .m_showTrainingDiary): return .match
+
+            case (.m_showFoodDiary, .m_showFoodDiary): return .match
+
+            case (.m_showPhotoDiary, .m_showPhotoDiary): return .match
+
+            case (.m_showVitamins, .m_showVitamins): return .match
+
+            case (.m_showExercise, .m_showExercise): return .match
 
             case (.m_inject, .m_inject): return .match
 
@@ -719,7 +773,13 @@ open class DashboardNavigatorUseCaseMock: DashboardNavigatorUseCase, Mock {
 
         func intValue() -> Int {
             switch self {
+            case .m_showTraining: return 0
             case .m_showProfile: return 0
+            case .m_showTrainingDiary: return 0
+            case .m_showFoodDiary: return 0
+            case .m_showPhotoDiary: return 0
+            case .m_showVitamins: return 0
+            case .m_showExercise: return 0
             case .m_inject: return 0
             case let .m_navigate__to_destinationmodel_model(p0, p1): return p0.intValue + p1.intValue
             case .p_state_get: return 0
@@ -731,7 +791,13 @@ open class DashboardNavigatorUseCaseMock: DashboardNavigatorUseCase, Mock {
         }
         func assertionName() -> String {
             switch self {
+            case .m_showTraining: return ".showTraining()"
             case .m_showProfile: return ".showProfile()"
+            case .m_showTrainingDiary: return ".showTrainingDiary()"
+            case .m_showFoodDiary: return ".showFoodDiary()"
+            case .m_showPhotoDiary: return ".showPhotoDiary()"
+            case .m_showVitamins: return ".showVitamins()"
+            case .m_showExercise: return ".showExercise()"
             case .m_inject: return ".inject()"
             case .m_navigate__to_destinationmodel_model: return ".navigate(to:model:)"
             case .p_state_get: return "[get] .state"
@@ -777,7 +843,13 @@ open class DashboardNavigatorUseCaseMock: DashboardNavigatorUseCase, Mock {
     public struct Verify {
         fileprivate var method: MethodType
 
+        public static func showTraining() -> Verify { return Verify(method: .m_showTraining)}
         public static func showProfile() -> Verify { return Verify(method: .m_showProfile)}
+        public static func showTrainingDiary() -> Verify { return Verify(method: .m_showTrainingDiary)}
+        public static func showFoodDiary() -> Verify { return Verify(method: .m_showFoodDiary)}
+        public static func showPhotoDiary() -> Verify { return Verify(method: .m_showPhotoDiary)}
+        public static func showVitamins() -> Verify { return Verify(method: .m_showVitamins)}
+        public static func showExercise() -> Verify { return Verify(method: .m_showExercise)}
         public static func inject() -> Verify { return Verify(method: .m_inject)}
         public static func navigate<T>(to destination: Parameter<DestinationType>, model: Parameter<T?>) -> Verify { return Verify(method: .m_navigate__to_destinationmodel_model(`destination`, `model`.wrapAsGeneric()))}
         public static var state: Verify { return Verify(method: .p_state_get) }
@@ -791,8 +863,26 @@ open class DashboardNavigatorUseCaseMock: DashboardNavigatorUseCase, Mock {
         fileprivate var method: MethodType
         var performs: Any
 
+        public static func showTraining(perform: @escaping () -> Void) -> Perform {
+            return Perform(method: .m_showTraining, performs: perform)
+        }
         public static func showProfile(perform: @escaping () -> Void) -> Perform {
             return Perform(method: .m_showProfile, performs: perform)
+        }
+        public static func showTrainingDiary(perform: @escaping () -> Void) -> Perform {
+            return Perform(method: .m_showTrainingDiary, performs: perform)
+        }
+        public static func showFoodDiary(perform: @escaping () -> Void) -> Perform {
+            return Perform(method: .m_showFoodDiary, performs: perform)
+        }
+        public static func showPhotoDiary(perform: @escaping () -> Void) -> Perform {
+            return Perform(method: .m_showPhotoDiary, performs: perform)
+        }
+        public static func showVitamins(perform: @escaping () -> Void) -> Perform {
+            return Perform(method: .m_showVitamins, performs: perform)
+        }
+        public static func showExercise(perform: @escaping () -> Void) -> Perform {
+            return Perform(method: .m_showExercise, performs: perform)
         }
         public static func inject(perform: @escaping () -> Void) -> Perform {
             return Perform(method: .m_inject, performs: perform)
