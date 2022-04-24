@@ -8,6 +8,7 @@
 "authentication.password" = "Jelszó";
 
 /* Dashboard */
+"dashboard.navbar.title" = "Menü";
 "dashboard.training.title" = "Edzés";
 "dashboard.training.description" = "Kezd el az edzést";
 "dashboard.profil.title" = "Profil";

@@ -35,6 +35,10 @@ internal enum Txt {
       /// Étkezési napló
       internal static let title = Txt.tr("Localizable", "dashboard.food_diary.title")
     }
+    internal enum Navbar {
+      /// Menü
+      internal static let title = Txt.tr("Localizable", "dashboard.navbar.title")
+    }
     internal enum PhotoDiary {
       /// Dokumentáld fejlődésed fényképekkel
       internal static let description = Txt.tr("Localizable", "dashboard.photo_diary.description")

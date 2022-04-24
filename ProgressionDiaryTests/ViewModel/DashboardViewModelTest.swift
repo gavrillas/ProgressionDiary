@@ -29,11 +29,59 @@ class DashboardViewModelTest: XCTestCase {
         super.tearDown()
     }
 
-    func test_rightBarButtonDidTap_whenCalled_shouldInvokeNavigatorShowProfile() {
+    func test_trainingDidTap_whenCalled_shouldInvokeNavigatorShowTraigning() {
         // When
-        viewModel.rightBarButtonDidTap()
+        viewModel.trainingDidTap()
+
+        //Expect
+        Verify(mockNavigator, 1, .showTraining())
+    }
+
+    func test_profieDidTap_whenCalled_shouldInvokeNavigatorShowProfile() {
+        // When
+        viewModel.profileDidTap()
 
         // Expect
         Verify(mockNavigator, 1, .showProfile())
+    }
+
+    func test_trainingDiaryDidTap_whenCalled_shouldInvokeNavigatorShowTrainingDiary() {
+        // When
+        viewModel.traingingDiaryDidTap()
+
+        //Expect
+        Verify(mockNavigator, 1, .showTrainingDiary())
+    }
+
+    func test_foodDiaryDidTap_whenCalled_shouldInvokeNavigatorShowFoodDiary() {
+        // When
+        viewModel.foodDiaryDidTap()
+
+        // Expect
+        Verify(mockNavigator, 1, .showFoodDiary())
+    }
+
+    func test_photoDiaryDidTap_whenCalled_shouldInvokeNavigatorShowPhotoDiary() {
+        // When
+        viewModel.photoDiaryDidTap()
+
+        // Expect
+        Verify(mockNavigator, 1, .showPhotoDiary())
+    }
+
+    func test_vitaminsDidTap_whenCalled_shouldInvokeNavigatorShowVitamins() {
+        // When
+        viewModel.vitaminsDidTap()
+
+        // Expect
+        Verify(mockNavigator, 1, .showVitamins())
+    }
+
+    func test_exerciseDidTap_whenCalled_shouldInvokeNavigatorShowExercise() {
+        // When
+        viewModel.exerciseDidTap()
+
+        // Expect
+        Verify(mockNavigator, 1, .showExercise())
     }
 }

@@ -2,6 +2,8 @@ import SwiftUI
 
 class DashboardViewState: ObservableObject {
     @Published var dashboardItems: [DashboardItemPresentationModel] = []
+
+    var title: String = ""
 }
 
 struct DashboardView<ViewModel: DashboardViewModelUseCase,
@@ -32,7 +34,7 @@ struct DashboardView<ViewModel: DashboardViewModelUseCase,
                 }.padding(.horizontal)
             }
             .navigationBarTitleDisplayMode(.large)
-            .navigationTitle("Dashboard")
+            .navigationTitle(state.title)
             .foregroundColor(.indigoCustom)
             .screenBackground()
             .navigation(using: _navigator)

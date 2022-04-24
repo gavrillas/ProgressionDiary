@@ -24,12 +24,14 @@ class DashboardViewModel<N: DashboardNavigatorUseCase>: DashboardViewModelUseCas
     init(with navigator: N, state: DashboardViewState) {
         self.navigator = navigator
         self.state = state
+
+        self.state.title = Txt.Dashboard.Navbar.title
         
         populateDashboard()
     }
 
     func trainingDidTap() {
-
+        navigator.showTraining()
     }
 
     func profileDidTap() {
@@ -37,23 +39,23 @@ class DashboardViewModel<N: DashboardNavigatorUseCase>: DashboardViewModelUseCas
     }
 
     func traingingDiaryDidTap() {
-
+        navigator.showTrainingDiary()
     }
 
     func foodDiaryDidTap() {
-
+        navigator.showFoodDiary()
     }
 
     func photoDiaryDidTap() {
-
+        navigator.showPhotoDiary()
     }
 
     func vitaminsDidTap() {
-        
+        navigator.showVitamins()
     }
 
     func exerciseDidTap() {
-
+        navigator.showExercise()
     }
 
 
