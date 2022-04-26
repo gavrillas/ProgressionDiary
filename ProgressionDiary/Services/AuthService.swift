@@ -22,7 +22,7 @@ protocol AuthServiceUseCase {
     func signOut() -> AnyPublisher<Void, AuthServiceError>
 }
 
-class AuthService {
+final class AuthService {
     private let userStateSubject = PassthroughSubject<UserState, Never>()
     private var authStateHandler: AuthStateDidChangeListenerHandle?
 

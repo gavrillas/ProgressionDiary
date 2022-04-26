@@ -3,6 +3,8 @@ import SwiftUI
 class ProfileViewState: ObservableObject {
     @Published var text: String = "This is your profile"
     @Published var isLoading = false
+
+    var rightBarButtonTitle: String = ""
 }
 
 struct ProfileView<ViewModel: ProfileViewModelUseCase>: View {
@@ -17,7 +19,7 @@ struct ProfileView<ViewModel: ProfileViewModelUseCase>: View {
     var body: some View {
         Text(state.text)
             .toolbar {
-                Button("logout") {
+                Button(state.rightBarButtonTitle) {
                     viewModel.rightBarButtonDidTap()
                 }
             }

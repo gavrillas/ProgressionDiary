@@ -75,6 +75,13 @@ internal enum Txt {
     /// Ok
     internal static let ok = Txt.tr("Localizable", "general.ok")
   }
+
+  internal enum Profile {
+    internal enum Navbar {
+      /// Kijelentkezés
+      internal static let logout = Txt.tr("Localizable", "profile.navbar.logout")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

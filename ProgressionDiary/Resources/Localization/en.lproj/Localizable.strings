@@ -23,3 +23,7 @@
 "dashboard.vitamins.description" = "Emlékeztesd magad a vitamin bevitelre";
 "dashboard.exercise.title" = "Gyakorlatok";
 "dashboard.exercise.description" = "Adj hozzá új gyakorlatot";
+
+/* Profile */
+
+"profile.navbar.logout" = "Kijelentkezés";

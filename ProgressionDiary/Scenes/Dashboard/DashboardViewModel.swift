@@ -25,8 +25,7 @@ class DashboardViewModel<N: DashboardNavigatorUseCase>: DashboardViewModelUseCas
         self.navigator = navigator
         self.state = state
 
-        self.state.title = Txt.Dashboard.Navbar.title
-        
+        localize()
         populateDashboard()
     }
 
@@ -58,6 +57,9 @@ class DashboardViewModel<N: DashboardNavigatorUseCase>: DashboardViewModelUseCas
         navigator.showExercise()
     }
 
+    private func localize() {
+        state.title = Txt.Dashboard.Navbar.title
+    }
 
     private func populateDashboard() {
         state.dashboardItems = [

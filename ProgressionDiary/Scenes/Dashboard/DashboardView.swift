@@ -39,6 +39,7 @@ struct DashboardView<ViewModel: DashboardViewModelUseCase,
             .screenBackground()
             .navigation(using: _navigator)
         }
+        .accentColor(.indigoCustom)
     }
 }
 

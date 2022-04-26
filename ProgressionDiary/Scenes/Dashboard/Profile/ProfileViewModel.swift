@@ -16,6 +16,8 @@ class ProfileViewModel: ProfileViewModelUseCase {
     init(with state: ProfileViewState, authService: AuthServiceUseCase) {
         self.state = state
         self.authSerivce = authService
+
+        localize()
     }
 
     func rightBarButtonDidTap() {
@@ -25,5 +27,9 @@ class ProfileViewModel: ProfileViewModelUseCase {
         } receiveValue: { [weak self] _ in
             self?.state.isLoading = false
         }.store(in: &subscriptions)
+    }
+
+    private func localize() {
+        state.rightBarButtonTitle = Txt.Profile.Navbar.logout
     }
 }
