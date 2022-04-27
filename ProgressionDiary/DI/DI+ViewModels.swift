@@ -15,7 +15,7 @@ extension Resolver {
         }
 
         Resolver.register { (_, args) in
-            ProfileViewModel(with: args.get(), authService: resolve())
+            ProfileViewModel(with: args.get(), authService: resolve(), firestoreService: resolve())
         }
     }
 }

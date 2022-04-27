@@ -30,7 +30,7 @@ struct ProfileView<ViewModel: ProfileViewModelUseCase>: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = ProfileViewModel(with: ProfileViewState(), authService: AuthService())
+        let viewModel = ProfileViewModel(with: ProfileViewState(), authService: AuthService(), firestoreService: FirestoreService())
         ProfileView(viewModel: viewModel)
     }
 }

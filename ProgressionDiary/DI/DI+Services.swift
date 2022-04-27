@@ -5,5 +5,9 @@ extension Resolver {
         Resolver.register(AuthServiceUseCase.self) {
             AuthService()
         }.scope(.cached)
+
+        Resolver.register(FirestoreServiceUseCase.self) {
+            FirestoreService()
+        }
     }
 }

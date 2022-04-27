@@ -10,13 +10,15 @@ protocol ProfileViewModelUseCase {
 class ProfileViewModel: ProfileViewModelUseCase {
     let state: ProfileViewState
     let authSerivce: AuthServiceUseCase
+    let firestoreService: FirestoreServiceUseCase
 
     private var subscriptions = Set<AnyCancellable>()
 
-    init(with state: ProfileViewState, authService: AuthServiceUseCase) {
+    init(with state: ProfileViewState, authService: AuthServiceUseCase, firestoreService: FirestoreServiceUseCase) {
         self.state = state
         self.authSerivce = authService
-
+        self.firestoreService = firestoreService
+        
         localize()
     }
 
